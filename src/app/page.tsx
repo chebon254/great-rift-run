@@ -16,7 +16,7 @@ export default function Home() {
         </div>
 
         {/* About */}
-        <div className="bg-[#1B1B1A] h-screen">
+        <div className="bg-[#1B1B1A] h-fits">
           <div className="mx-auto max-w-7xl py-20">
             <h1 className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] pb-8">ABOUT US</h1>
             <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">Iten is situated in the west of Kenya, at an altitude of 8000ft above sea level. Iten is the perfect training environment for long distance runners, and has been referred regularly as,  &ldquo;The Home of Champions.&rdquo;</p>
@@ -51,6 +51,32 @@ export default function Home() {
                 </div>
             </div>
           </div>
+        </div>
+
+        {/* Details */}
+        <div className="w-full bg-cover bg-center py-40" style={{backgroundImage: 'url(/runners.png)'}}>
+            <div className="mx-auto max-w-7xl flex items-center justify-evenly flex-wrap">
+                <div className="py-10 px-5">
+                  <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">195</h1>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">RUNNERS</p>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">REGISTERED</p>
+                </div>
+                <div className="py-10 px-5">
+                  <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">5</h1>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">EVENTS</p>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">HELD</p>
+                </div>
+                <div className="py-10 px-5">
+                  <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">100</h1>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">MILES</p>
+                  <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">COVERED</p>
+                </div>
+            </div>
+        </div>
+
+        {/* Details */}
+        <div className="bg-[#009951]">
+
         </div>
     </main>
   );

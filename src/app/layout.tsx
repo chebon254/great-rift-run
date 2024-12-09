@@ -18,6 +18,11 @@ const opensansCondensedExtrabold = localFont({
   variable: "--font-opensans-condensed-extrabold-italic",
   weight: "800",
 });
+const opensansBold = localFont({
+  src: "./fonts/OpenSans_Condensed/Bold/OpenSans-Bold.woff",
+  variable: "--font-opensans-bold",
+  weight: "700",
+});
 const robotoExtrabold = localFont({
   src: "./fonts/Roboto/Roboto-Bold.ttf",
   variable: "--font-roboto-extrabold",
@@ -59,6 +64,7 @@ export default function RootLayout({
           ${opensansCondensedExtrabold.variable} 
           ${robotoExtrabold.variable} 
           ${robotobold.variable} 
+          ${opensansBold.variable} 
           antialiased relative z-0`}
       >
         <Navbar />
