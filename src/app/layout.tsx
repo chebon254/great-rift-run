@@ -3,15 +3,20 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 
-const geistSans = localFont({
+const robotoextrabold = localFont({
   src: "./fonts/Roboto_Condensed/static/RobotoCondensed-ExtraBold.ttf",
   variable: "--font-roboto-extrabold",
   weight: "800",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const opensansCondensedExtrabold = localFont({
+  src: "./fonts/OpenSans_Condensed/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff",
+  variable: "--font-opensans-condensed-extrabold-italic",
   weight: "800",
+});
+const robotoExtrabold = localFont({
+  src: "./fonts/Roboto/Roboto-Bold.ttf",
+  variable: "--font-roboto-extrabold",
+  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +49,7 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative z-0`}
+        className={`${robotoextrabold.variable} ${opensansCondensedExtrabold.variable} ${robotoExtrabold.variable} antialiased relative z-0`}
       >
         <Navbar />
         {children}
