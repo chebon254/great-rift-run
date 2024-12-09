@@ -152,6 +152,46 @@ export default function Home() {
               </div>
           </div>
         </div>
+
+        {/* Testimonial */}
+        <div className="bg-[#1E1E1E] w-full">
+          <div className="mx-auto max-w-7xl">
+
+          </div>
+        </div>
+
+        {/* Stories */}
+        <div className="w-full bg-[#FFFFFF] py-10">
+          <div className="mx-auto max-w-7xl">
+              <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">STORIES FROM THE RIFT</h1>
+              <div className="flex items-center justify-evenly my-8">
+                <div className="my-6 mx-8 h-fit w-[400px]">
+                  <div className="text-left">
+                    <Image src={'/story-1.png'} height={320} width={400} alt="great rift run" className="my-4"/>
+                    <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">October 10, 2024</h3>
+                    <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">THE HEAT OF THE MOMENT</p>
+                    <button className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">READ MORE</button>
+                  </div>
+                </div>
+                <div className="my-6 mx-8 h-fit w-[400px]">
+                  <div className="text-left">
+                    <Image src={'/story-1.png'} height={320} width={400} alt="great rift run" className="my-4"/>
+                    <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">October 10, 2024</h3>
+                    <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">A CROSS COUNTRY EXPERIENCE</p>
+                    <button className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">READ MORE</button>
+                  </div>
+                </div>
+                <div className="my-6 mx-8 h-fit w-[400px]">
+                  <div className="text-left">
+                    <Image src={'/story-1.png'} height={320} width={400} alt="great rift run" className="my-4"/>
+                    <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">October 10, 2024</h3>
+                    <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">BUCKET LIST - QUITE A MUDDY ENDING</p>
+                    <button className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">READ MORE</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
     </main>
   );
 }

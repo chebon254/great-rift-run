@@ -13,6 +13,11 @@ const robotobold = localFont({
   variable: "--font-roboto-bold",
   weight: "700",
 });
+const robotoCondensedMedium = localFont({
+  src: "./fonts/Roboto_Condensed/static/RobotoCondensed-Medium.ttf",
+  variable: "--font-roboto-condensed-medium",
+  weight: "500",
+});
 const opensansCondensedExtrabold = localFont({
   src: "./fonts/OpenSans_Condensed/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff",
   variable: "--font-opensans-condensed-extrabold-italic",
@@ -27,6 +32,11 @@ const robotoExtrabold = localFont({
   src: "./fonts/Roboto/Roboto-Bold.ttf",
   variable: "--font-roboto-extrabold",
   weight: "700",
+});
+const robotoMedium = localFont({
+  src: "./fonts/Roboto/Roboto-Bold.ttf",
+  variable: "--font-roboto-medium",
+  weight: "500",
 });
 
 export const metadata: Metadata = {
@@ -65,6 +75,8 @@ export default function RootLayout({
           ${robotoExtrabold.variable} 
           ${robotobold.variable} 
           ${opensansBold.variable} 
+          ${robotoMedium.variable} 
+          ${robotoCondensedMedium.variable} 
           antialiased relative z-0`}
       >
         <Navbar />
