@@ -126,7 +126,32 @@ export default function Home() {
           </div>
         </div>
 
-        {}
+        {/* Our experiences */}
+        <div className="w-full bg-[#FFFFFF] py-10">
+          <div className="mx-auto max-w-7xl">
+              <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">OUR EXPERIENCES</h1>
+              <div className="my-[50px] flex items-center justify-center flex-wrap">
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-one.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-two.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-three.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-four.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-five.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+                <div className="m-3 h-[320px] w-[320px]">
+                  <Image src={'/gallery-six.png'} height={320} width={320} alt="great rift run" className="my-4"/>
+                </div>
+              </div>
+          </div>
+        </div>
     </main>
   );
 }
