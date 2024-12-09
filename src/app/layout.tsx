@@ -8,6 +8,11 @@ const robotoextrabold = localFont({
   variable: "--font-roboto-extrabold",
   weight: "800",
 });
+const robotobold = localFont({
+  src: "./fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf",
+  variable: "--font-roboto-bold",
+  weight: "700",
+});
 const opensansCondensedExtrabold = localFont({
   src: "./fonts/OpenSans_Condensed/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff",
   variable: "--font-opensans-condensed-extrabold-italic",
@@ -49,7 +54,12 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
       <body
-        className={`${robotoextrabold.variable} ${opensansCondensedExtrabold.variable} ${robotoExtrabold.variable} antialiased relative z-0`}
+        className={`
+          ${robotoextrabold.variable} 
+          ${opensansCondensedExtrabold.variable} 
+          ${robotoExtrabold.variable} 
+          ${robotobold.variable} 
+          antialiased relative z-0`}
       >
         <Navbar />
         {children}
