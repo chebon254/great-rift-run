@@ -76,7 +76,15 @@ export default function Home() {
 
         {/* Details */}
         <div className="bg-[#009951]">
-
+            <div className="mx-auto max-w-7xl py-20">
+              <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">Iten is situated in the west of Kenya, at an altitude of 8000ft above sea level. Iten is the perfect training environment for long distance runners, and has been referred regularly as,  &ldquo;The Home of Champions.&rdquo;</p>
+              <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">We at the Great Rift Run seek to provide an exceptional experience in the Great Rift Valley.</p>
+              <div className="flex items-center justify-between mt-32 py-6 flex-wrap">
+                <Image src={'/bookingcom-logo.svg'} height={46} width={330} alt="great rift run" className="my-4"/>
+                <Image src={'/Tripadvisor_Logo.svg'} height={64} width={300} alt="great rift run" className="my-4"/>
+                <Image src={'/Trustpilot_logo.svg'} height={64} width={281} alt="great rift run" className="my-4"/>
+              </div>
+            </div>
         </div>
     </main>
   );
