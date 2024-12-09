@@ -222,7 +222,7 @@ export default function Home() {
             </div>
             <div
               className="h-[560px] w-[400px] p-6 relative"
-              style={{ backgroundImage: "url(/card-one.png)" }}
+              style={{ backgroundImage: "url(/card-two.png)" }}
             >
               <div className="text-left absolute bottom-6">
                 <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
@@ -239,7 +239,7 @@ export default function Home() {
             </div>
             <div
               className="h-[560px] w-[400px] p-6 relative"
-              style={{ backgroundImage: "url(/card-one.png)" }}
+              style={{ backgroundImage: "url(/card-three.png)" }}
             >
               <div className="text-left absolute bottom-6">
                 <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
@@ -342,8 +342,65 @@ export default function Home() {
       </div>
 
       {/* Testimonial */}
-      <div className="bg-[#1E1E1E] w-full">
-        <div className="mx-auto max-w-7xl"></div>
+      <div className="bg-[#1E1E1E] w-full py-10">
+        <div className="mx-auto max-w-7xl flex items-start justify-between">
+          <div className="md:w-1/2">
+            <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">JOIN THE BAND, EVERYONE'S A WINNER</h1>
+            <Image
+                src={"/quote.svg"}
+                height={80}
+                width={112}
+                alt="great rift run"
+                className="mt-[100px]"
+              />
+            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] mt-12 mb-16 text-[32px] leading-normal">
+              Great Rift Run is a running experience, for all walks of life. We
+              banded together, and it was a fun to experience the run.
+            </p>
+            <div className="flex items-center justify-start">
+              <Image
+                src={"/profile.png"}
+                height={128}
+                width={128}
+                alt="great rift run"
+                className="border-8 border-[#009951] rounded-full"
+              />
+              <div className="ml-5">
+                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-[32px] leading-none">John Demure</h2>
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-6  text-[24px] leading-none">Columbia Business School Grad</p>
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-[24px] leading-none">Adventurer, Traveler, World-seer</p>
+              </div>
+            </div>
+            <div className="flex items-ceter justify-end my-12">
+                <div className="flex items-center justify-center">
+                  <button className="h-[68px] w-[74px] mx-3 flex items-center justify-center">
+                    <Image
+                      src={"/arrow-left-white.svg"}
+                      height={48}
+                      width={42}
+                      alt="great rift run"
+                    />
+                  </button>
+                  <button className="h-[68px] w-[74px] mx-3 bg-[#14AE5C] flex items-center justify-center">
+                    <Image
+                      src={"/arrow-right-white.svg"}
+                      height={48}
+                      width={42}
+                      alt="great rift run"
+                    />
+                  </button>
+                </div>
+              </div>
+          </div>
+          <div>
+          <Image
+                src={"/testimonial-runners.png"}
+                height={896}
+                width={624}
+                alt="great rift run"
+              />
+          </div>
+        </div>
       </div>
 
       {/* Stories */}
@@ -418,9 +475,14 @@ export default function Home() {
       </div>
 
       {/* Catch Us */}
-      <div className="w-full bg-cover bg-center" style={{ backgroundImage: "url(/Socials.png)" }}>
+      <div
+        className="w-full bg-cover bg-center"
+        style={{ backgroundImage: "url(/Socials.png)" }}
+      >
         <div className="w-full h-full py-5">
-          <h1 className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-5 text-[32px] leading-normal">CATCH US ON</h1>
+          <h1 className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-5 text-[32px] leading-normal">
+            CATCH US ON
+          </h1>
           <div className="mx-auto flex items-center my-8 justify-evenly w-[200px]">
             <Link href={""}>
               <Image
@@ -456,13 +518,13 @@ export default function Home() {
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="font-bold text-lg text-black text-center md:text-left">
-            <Image
-                  src={"/footer-logo.svg"}
-                  height={64}
-                  width={174}
-                  alt="great rift run"
-                  className="my-4"
-                />
+              <Image
+                src={"/footer-logo.svg"}
+                height={64}
+                width={174}
+                alt="great rift run"
+                className="my-4"
+              />
             </div>
           </div>
 
@@ -496,8 +558,12 @@ export default function Home() {
               Contact Us
             </h3>
             <ul className="mt-2 text-center md:text-left">
-              <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 text-[24px] leading-none">+1 (555) 678 980</li>
-              <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 text-[24px] leading-none">+254712 345678</li>
+              <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 text-[24px] leading-none">
+                +1 (555) 678 980
+              </li>
+              <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 text-[24px] leading-none">
+                +254712 345678
+              </li>
             </ul>
           </div>
         </div>
