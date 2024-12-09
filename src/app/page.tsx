@@ -22,7 +22,7 @@ export default function Home() {
             <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">Iten is situated in the west of Kenya, at an altitude of 8000ft above sea level. Iten is the perfect training environment for long distance runners, and has been referred regularly as,  &ldquo;The Home of Champions.&rdquo;</p>
             <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">We seek to provide this exceptional experience to you, in the Great Rift Valley.</p>
           </div>
-          <div className="mt-[240px] bg-[#FFFFFF] w-full">
+          <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14">
             <div className="mx-auto max-w-7xl">
                 <div className="flex items-center justify-evenly mb-6">
                   <div className="-mt-[200px]">
