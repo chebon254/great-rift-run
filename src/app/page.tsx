@@ -1,7 +1,14 @@
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      
-    </div>
+    <main className="w-full">
+        {/* Hero */}
+        <div className="h-screen w-full bg-cover bg-center absolute top-0 z-40" style={{backgroundImage: 'url(/hero-image.png)'}}>
+          <div className="mx-auto max-w-7xl h-full flex justify-center items-center">
+            <div className="h-fit">
+
+            </div>
+          </div>
+        </div>
+    </main>
   );
 }
