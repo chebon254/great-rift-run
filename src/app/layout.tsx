@@ -79,7 +79,7 @@ export default function RootLayout({
           ${robotoCondensedMedium.variable} 
           antialiased relative z-0`}
       >
-        <Navbar />
+        <Navbar className="sticky top-0 z-50" />
         {children}
       </body>
     </html>

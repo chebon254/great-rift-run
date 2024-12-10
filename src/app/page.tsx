@@ -3,24 +3,29 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+    
     <main className="w-full h-fit absolute top-0 z-40">
+      <div id='top-nav'></div>
       {/* Hero */}
       <div
         className="h-screen w-full bg-cover bg-center"
         style={{ backgroundImage: "url(/hero-image.png)" }}
       >
         <div className="mx-auto max-w-7xl h-full flex justify-center items-center">
-          <div className="h-fit text-left w-full">
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[128px] text-[#14AE5C] leading-[120px]">
+          <div className="h-fit text-left w-full px-4 md:px-8">
+            {/* Headings */}
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               RUN
             </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[128px] text-[#EC221F] leading-[120px]">
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#EC221F] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               WITH
             </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[128px] text-[#FFFFFF] leading-[120px]">
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#FFFFFF] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               CHAMPIONS
             </h1>
-            <button className="bg-[#EC221F] text-[#FFFFFF] w-[300px] p-8 mt-16 font-[family-name:var(--font-roboto-extrabold)]">
+
+            {/* Button */}
+            <button className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
               JOIN THE GREAT RUN
             </button>
           </div>
@@ -28,7 +33,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className="bg-[#1B1B1A] h-fits">
+      <div className="bg-[#1B1B1A] h-fits" id="about-nav">
         <div className="mx-auto max-w-7xl py-20">
           <h1 className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] pb-8">
             ABOUT US
@@ -169,12 +174,13 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-between mt-32 py-6 flex-wrap">
             <Image
-              src={"/bookingcom-logo.svg"}
-              height={46}
-              width={330}
+              src="/bookingcom-logo.svg"
+              width={331} // Optional, scales with height automatically
+              height={56} // Optional, scales with width automatically
               alt="great rift run"
               className="my-4"
             />
+
             <Image
               src={"/Tripadvisor_Logo.svg"}
               height={64}
@@ -194,7 +200,7 @@ export default function Home() {
       </div>
 
       {/* Programs */}
-      <div className="bg-[#009951] w-full">
+      <div id="programs-nav" className="bg-[#009951] w-full">
         <div className="mx-auto max-w-7xl pt-10 pb-20">
           <h1 className="text-center mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] leading-none">
             PROGRAM
@@ -345,14 +351,16 @@ export default function Home() {
       <div className="bg-[#1E1E1E] w-full py-10">
         <div className="mx-auto max-w-7xl flex items-start justify-between">
           <div className="md:w-1/2">
-            <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">JOIN THE BAND, EVERYONE'S A WINNER</h1>
+            <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">
+              JOIN THE BAND, EVERYONE'S A WINNER
+            </h1>
             <Image
-                src={"/quote.svg"}
-                height={80}
-                width={112}
-                alt="great rift run"
-                className="mt-[100px]"
-              />
+              src={"/quote.svg"}
+              height={80}
+              width={112}
+              alt="great rift run"
+              className="mt-[100px]"
+            />
             <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] mt-12 mb-16 text-[32px] leading-normal">
               Great Rift Run is a running experience, for all walks of life. We
               banded together, and it was a fun to experience the run.
@@ -366,39 +374,45 @@ export default function Home() {
                 className="border-8 border-[#009951] rounded-full"
               />
               <div className="ml-5">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-[32px] leading-none">John Demure</h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-6  text-[24px] leading-none">Columbia Business School Grad</p>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-[24px] leading-none">Adventurer, Traveler, World-seer</p>
+                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-[32px] leading-none">
+                  John Demure
+                </h2>
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-6  text-[24px] leading-none">
+                  Columbia Business School Grad
+                </p>
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-[24px] leading-none">
+                  Adventurer, Traveler, World-seer
+                </p>
               </div>
             </div>
             <div className="flex items-ceter justify-end my-12">
-                <div className="flex items-center justify-center">
-                  <button className="h-[68px] w-[74px] mx-3 flex items-center justify-center">
-                    <Image
-                      src={"/arrow-left-white.svg"}
-                      height={48}
-                      width={42}
-                      alt="great rift run"
-                    />
-                  </button>
-                  <button className="h-[68px] w-[74px] mx-3 bg-[#14AE5C] flex items-center justify-center">
-                    <Image
-                      src={"/arrow-right-white.svg"}
-                      height={48}
-                      width={42}
-                      alt="great rift run"
-                    />
-                  </button>
-                </div>
+              <div className="flex items-center justify-center">
+                <button className="h-[68px] w-[74px] mx-3 flex items-center justify-center">
+                  <Image
+                    src={"/arrow-left-white.svg"}
+                    height={48}
+                    width={42}
+                    alt="great rift run"
+                  />
+                </button>
+                <button className="h-[68px] w-[74px] mx-3 bg-[#14AE5C] flex items-center justify-center">
+                  <Image
+                    src={"/arrow-right-white.svg"}
+                    height={48}
+                    width={42}
+                    alt="great rift run"
+                  />
+                </button>
               </div>
+            </div>
           </div>
           <div>
-          <Image
-                src={"/testimonial-runners.png"}
-                height={896}
-                width={624}
-                alt="great rift run"
-              />
+            <Image
+              src={"/testimonial-runners.png"}
+              height={896}
+              width={624}
+              alt="great rift run"
+            />
           </div>
         </div>
       </div>
@@ -476,6 +490,7 @@ export default function Home() {
 
       {/* Catch Us */}
       <div
+        id="contact-nav"
         className="w-full bg-cover bg-center"
         style={{ backgroundImage: "url(/Socials.png)" }}
       >
