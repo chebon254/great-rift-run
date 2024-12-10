@@ -3,9 +3,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    
     <main className="w-full h-fit absolute top-0 z-40">
-      <div id='top-nav'></div>
+      <div id="top-nav"></div>
       {/* Hero */}
       <div
         className="h-screen w-full bg-cover bg-center"
@@ -34,21 +33,22 @@ export default function Home() {
 
       {/* About */}
       <div className="bg-[#1B1B1A] h-fits" id="about-nav">
-        <div className="mx-auto max-w-7xl py-20">
-          <h1 className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] pb-8">
+        <div className="mx-auto max-w-7xl py-20 px-4">
+          <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl pb-8">
             ABOUT US
           </h1>
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">
+          <p className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
             Iten is situated in the west of Kenya, at an altitude of 8000ft
             above sea level. Iten is the perfect training environment for long
             distance runners, and has been referred regularly as, &ldquo;The
             Home of Champions.&rdquo;
           </p>
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">
+          <p className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
             We seek to provide this exceptional experience to you, in the Great
             Rift Valley.
           </p>
         </div>
+
         <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14">
           <div className="mx-auto max-w-7xl">
             <div className="flex items-center justify-evenly mb-6">
@@ -123,36 +123,36 @@ export default function Home() {
         style={{ backgroundImage: "url(/runners.png)" }}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-evenly flex-wrap">
-          <div className="py-10 px-5">
-            <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+          <div className="py-10 px-5 text-center md:text-left">
+            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
               195
             </h1>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               RUNNERS
             </p>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               REGISTERED
             </p>
           </div>
-          <div className="py-10 px-5">
-            <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+          <div className="py-10 px-5 text-center md:text-left">
+            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
               5
             </h1>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               EVENTS
             </p>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               HELD
             </p>
           </div>
-          <div className="py-10 px-5">
-            <h1 className="text-left text-[#FFFFFF] font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+          <div className="py-10 px-5 text-center md:text-left">
+            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
               100
             </h1>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               MILES
             </p>
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
               COVERED
             </p>
           </div>
@@ -162,17 +162,20 @@ export default function Home() {
       {/* Details */}
       <div className="bg-[#009951] w-full">
         <div className="mx-auto max-w-7xl py-20">
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">
+          {/* Text Section */}
+          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
             Iten is situated in the west of Kenya, at an altitude of 8000ft
             above sea level. Iten is the perfect training environment for long
             distance runners, and has been referred regularly as, &ldquo;The
             Home of Champions.&rdquo;
           </p>
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[24px] py-4">
+          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
             We at the Great Rift Run seek to provide an exceptional experience
             in the Great Rift Valley.
           </p>
-          <div className="flex items-center justify-between mt-32 py-6 flex-wrap">
+
+          {/* Image Section */}
+          <div className="flex items-center justify-center sm:justify-between mt-32 py-6 flex-wrap">
             <Image
               src="/bookingcom-logo.svg"
               width={331} // Optional, scales with height automatically
@@ -423,7 +426,7 @@ export default function Home() {
           <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">
             STORIES FROM THE RIFT
           </h1>
-          <div className="flex items-center justify-evenly my-8">
+          <div className="flex items-center justify-evenly flex-wrap my-8">
             <div className="my-6 mx-8 h-fit w-[400px]">
               <div className="text-left">
                 <Image
