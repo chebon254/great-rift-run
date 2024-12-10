@@ -355,7 +355,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl flex items-start justify-between">
           <div className="md:w-1/2">
             <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">
-              JOIN THE BAND, EVERYONE'S A WINNER
+              JOIN THE BAND, EVERYONE&apos;S A WINNER
             </h1>
             <Image
               src={"/quote.svg"}
