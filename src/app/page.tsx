@@ -16,13 +16,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 h-full flex justify-center items-center">
           <div className="h-fit text-left w-full px-4 md:px-8">
             {/* Headings */}
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]">
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               RUN
             </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#EC221F] leading-[64px] sm:leading-[96px] md:leading-[120px]">
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#EC221F] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               WITH
             </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#FFFFFF] leading-[64px] sm:leading-[96px] md:leading-[120px]">
+            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#FFFFFF] leading-[64px] sm:leading-[96px] md:leading-[120px]">
               CHAMPIONS
             </h1>
 
@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className="bg-[#1B1B1A] h-fits" id="about-nav">
+      <div className="bg-[#1B1B1A] h-fits overflow-hidden" id="about-nav">
         <div className="mx-auto max-w-7xl px-4 py-20">
           <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-8xl pb-8">
             ABOUT US
@@ -244,7 +244,7 @@ export default function Home() {
             STORIES FROM THE RIFT
           </h1>
           <div className="flex items-center justify-evenly flex-wrap my-8">
-            <div className="my-6 mx-8 h-fit w-[400px]">
+            <div className="my-6 mx-4 h-fit w-[380px]">
               <div className="text-left">
                 <Image
                   src={"/story-1.png"}
@@ -264,7 +264,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="my-6 mx-8 h-fit w-[400px]">
+            <div className="my-6 mx-4 h-fit w-[380px]">
               <div className="text-left">
                 <Image
                   src={"/story-2.png"}
@@ -284,7 +284,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="my-6 mx-8 h-fit w-[400px]">
+            <div className="my-6 mx-4 h-fit w-[380px]">
               <div className="text-left">
                 <Image
                   src={"/story-3.png"}

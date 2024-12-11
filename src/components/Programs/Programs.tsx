@@ -34,7 +34,7 @@ export function ExperiencesCarousel() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl pt-10 pb-20">
+    <div className="mx-auto max-w-7xl w-full pt-10 pb-20 overflow-hidden">
         <h1 className="text-center mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)]  text-3xl sm:text-4xl md:text-6xl lg:text-8xl leading-none">
             PROGRAM
           </h1>

@@ -30,9 +30,9 @@ export function Founders() {
   ];
 
   return (
-    <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14 overflow-y-visible">
-      <div className="mx-auto max-w-7xl overflow-y-visible">
-        <Carousel className="w-full overflow-y-visible">
+    <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14 overflow-card">
+      <div className="mx-auto max-w-7xl">
+        <Carousel className="w-full ">
           <CarouselContent className="-ml-2 md:-ml-4">
             {items.map((item, index) => (
               <CarouselItem
