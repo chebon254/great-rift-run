@@ -35,10 +35,10 @@ export function ExperiencesCarousel() {
 
   return (
     <div className="mx-auto max-w-7xl pt-10 pb-20">
-        <h1 className="text-center mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] leading-none">
+        <h1 className="text-center mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)]  text-3xl sm:text-4xl md:text-6xl lg:text-8xl leading-none">
             PROGRAM
           </h1>
-          <p className="text-center my-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-extrabold)] text-[40px] leading-none">
+          <p className="text-center my-4 sm:my-6 md:my-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-extrabold)] text-[16px] sm:text-[20px] md:[40px] lg:text-[40px]] leading-none">
             THE BEST SPORTING GETAWAY EXPERIENCE
           </p>
       <Carousel className="w-full px-4">

@@ -36,7 +36,7 @@ export default function Home() {
       {/* About */}
       <div className="bg-[#1B1B1A] h-fits" id="about-nav">
         <div className="mx-auto max-w-7xl px-4 py-20">
-          <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl pb-8">
+          <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-8xl pb-8">
             ABOUT US
           </h1>
           <p className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
@@ -147,7 +147,7 @@ export default function Home() {
       {/* Our experiences */}
       <div className="w-full bg-[#FFFFFF] py-10">
         <div className="mx-auto max-w-7xl px-4">
-          <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">
+          <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl">
             OUR EXPERIENCES
           </h1>
           <div className="my-[50px] flex items-center justify-center flex-wrap">
@@ -213,7 +213,7 @@ export default function Home() {
       <div className="bg-[#1E1E1E] w-full py-10">
         <div className="mx-auto max-w-7xl px-4 flex items-start justify-between flex-wrap">
           <div className="md:w-1/2">
-            <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">
+            <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-6xl sm:text-4xl md:text-5xl lg:text-6xl leading-none">
               JOIN THE BAND, EVERYONE&apos;S A WINNER
             </h1>
             <Image
@@ -223,7 +223,7 @@ export default function Home() {
               alt="great rift run"
               className="mt-[100px]"
             />
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] mt-12 mb-16 text-[32px] leading-normal">
+            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] mt-12 mb-16 text-2xl sm:text-xl md:text-2xl lg:text-3xl leading-normal">
               Great Rift Run is a running experience, for all walks of life. We
               banded together, and it was a fun to experience the run.
             </p>
@@ -236,13 +236,13 @@ export default function Home() {
                 className="border-8 border-[#009951] rounded-full"
               />
               <div className="ml-5">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-[32px] leading-none">
+                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-xl sm:text-lg md:text-xl lg:text-3xl  leading-none">
                   John Demure
                 </h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-6  text-[24px] leading-none">
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-3 sm:my-6  text-base sm:text-lg md:text-xl lg:text-2xl leading-none">
                   Columbia Business School Grad
                 </p>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-[24px] leading-none">
+                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-base sm:text-lg md:text-xl lg:text-2xl leading-none">
                   Adventurer, Traveler, World-seer
                 </p>
               </div>
@@ -282,7 +282,7 @@ export default function Home() {
       {/* Stories */}
       <div className="w-full bg-[#FFFFFF] py-10">
         <div className="mx-auto max-w-7xl px-4">
-          <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">
+          <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             STORIES FROM THE RIFT
           </h1>
           <div className="flex items-center justify-evenly flex-wrap my-8">
