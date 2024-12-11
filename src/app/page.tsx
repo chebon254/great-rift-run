@@ -213,7 +213,7 @@ export default function Home() {
       {/* Testimonial */}
       <div className="bg-[#1E1E1E] w-full py-10">
         <div className="mx-auto max-w-7xl px-4 flex items-start justify-between flex-wrap">
-          <div className="md:w-1/2 px-2">
+          <div className="md:w-1/2 px-2 w-full">
             <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-6xl sm:text-4xl md:text-5xl lg:text-6xl leading-none">
               JOIN THE BAND, EVERYONE&apos;S A WINNER
             </h1>
@@ -226,7 +226,7 @@ export default function Home() {
             />
             <Testimonials/>
           </div>
-          <div className="md:w-1/2 px-2">
+          <div className="md:w-1/2 px-2 w-full">
             <Image
               src={"/testimonial-runners.png"}
               height={896}
