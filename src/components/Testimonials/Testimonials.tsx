@@ -74,11 +74,11 @@ export function Testimonials() {
               <div className="flex items-center justify-center">
                 <CarouselPrevious
                   imgSrc="/arrow-left-white.svg"
-                  className="bg-[#009951] hover:bg-[#009951] h-[68px] w-[74px] mx-3 flex items-center justify-center"
+                  className="bg-[#009951] hover:bg-[#009951] h-[68px] w-[74px] mx-3 flex items-center justify-center rounded-none"
                 ></CarouselPrevious>
                 <CarouselNext
                   imgSrc="/arrow-right-white.svg"
-                  className="bg-[#009951] hover:bg-[#009951] h-[68px] w-[74px] mx-3 flex items-center justify-center"
+                  className="bg-[#009951] hover:bg-[#009951] h-[68px] w-[74px] mx-3 flex items-center justify-center rounded-none"
                 ></CarouselNext>
               </div>
             </div>
