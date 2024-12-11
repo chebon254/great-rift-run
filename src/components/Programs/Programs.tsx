@@ -46,10 +46,10 @@ export function ExperiencesCarousel() {
           {items.map((item, index) => (
             <CarouselItem
               key={index}
-              className=" h-[560px] w-full min-w-[280px] max-w-[400px] bg-cover bg-center relative pt-6 pb-4 py-4"
+              className=" h-[560px] w-full min-w-[280px] max-w-[400px] bg-cover bg-center relative pt-6 pb-4 px-4"
               style={{ backgroundImage: item.backgroundImage }}
             >
-              <div className="w-full absolute bottom-6 text-left px-2 py-4">
+              <div className="w-full max-w-[368px] absolute bottom-6 text-left px-2 py-4">
                 <h2 className="text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
                   {item.title}
                 </h2>

@@ -391,7 +391,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-white my-8 py-8 px-4 md:px-16">
-        <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-start">
+        <div className="container mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-start">
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="font-bold text-lg text-black text-center md:text-left">
