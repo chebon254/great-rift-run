@@ -1,5 +1,6 @@
 import { Founders } from "@/components/Founders/Founders";
 import { ExperiencesCarousel } from "@/components/Programs/Programs";
+import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -223,50 +224,7 @@ export default function Home() {
               alt="great rift run"
               className="mt-[100px]"
             />
-            <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] mt-12 mb-16 text-2xl sm:text-xl md:text-2xl lg:text-3xl leading-normal">
-              Great Rift Run is a running experience, for all walks of life. We
-              banded together, and it was a fun to experience the run.
-            </p>
-            <div className="flex items-center justify-start">
-              <Image
-                src={"/profile.png"}
-                height={128}
-                width={128}
-                alt="great rift run"
-                className="border-8 border-[#009951] rounded-full"
-              />
-              <div className="ml-5">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] text-xl sm:text-lg md:text-xl lg:text-3xl  leading-none">
-                  John Demure
-                </h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-3 sm:my-6  text-base sm:text-lg md:text-xl lg:text-2xl leading-none">
-                  Columbia Business School Grad
-                </p>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)]  text-base sm:text-lg md:text-xl lg:text-2xl leading-none">
-                  Adventurer, Traveler, World-seer
-                </p>
-              </div>
-            </div>
-            <div className="flex items-ceter justify-end my-12">
-              <div className="flex items-center justify-center">
-                <button className="h-[68px] w-[74px] mx-3 flex items-center justify-center">
-                  <Image
-                    src={"/arrow-left-white.svg"}
-                    height={48}
-                    width={42}
-                    alt="great rift run"
-                  />
-                </button>
-                <button className="h-[68px] w-[74px] mx-3 bg-[#14AE5C] flex items-center justify-center">
-                  <Image
-                    src={"/arrow-right-white.svg"}
-                    height={48}
-                    width={42}
-                    alt="great rift run"
-                  />
-                </button>
-              </div>
-            </div>
+            <Testimonials/>
           </div>
           <div>
             <Image

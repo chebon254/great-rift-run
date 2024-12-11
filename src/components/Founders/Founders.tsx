@@ -40,7 +40,7 @@ export function Founders() {
                 className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
               >
                 <Card>
-                  <CardContent className="-mt-[200px] p-0 overflow-hidden -pt-2">
+                  <CardContent className="-mt-[200px] w-full max-w-[400px] p-0 overflow-hidden -pt-2">
                     <Image
                       src={item.imageSrc}
                       height={400}
