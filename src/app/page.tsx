@@ -1,4 +1,5 @@
 import { Founders } from "@/components/Founders/Founders";
+import { ExperiencesCarousel } from "@/components/Programs/Programs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -140,85 +141,7 @@ export default function Home() {
 
       {/* Programs */}
       <div id="programs-nav" className="bg-[#009951] w-full">
-        <div className="mx-auto max-w-7xl pt-10 pb-20">
-          <h1 className="text-center mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[80px] leading-none">
-            PROGRAM
-          </h1>
-          <p className="text-center my-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-extrabold)] text-[40px] leading-none">
-            THE BEST SPORTING GETAWAY EXPERIENCE
-          </p>
-          <div className="flex items-center justify-evenly my-8">
-            <div
-              className="h-[560px] w-[400px] p-6 relative"
-              style={{ backgroundImage: "url(/card-one.png)" }}
-            >
-              <div className="text-left absolute bottom-6">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
-                  RUN WITH LEGENDS
-                </h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] my-6 text-[20px] leading-normal">
-                  Run and train fully guided by coaches, workouts and gym
-                  facilities
-                </p>
-                <button className="bg-[#EC221F] text-[#FFFFFF] w-[300px] py-4 px-6 mt-4 font-[family-name:var(--font-roboto-extrabold)]">
-                  JOIN NOW
-                </button>
-              </div>
-            </div>
-            <div
-              className="h-[560px] w-[400px] p-6 relative"
-              style={{ backgroundImage: "url(/card-two.png)" }}
-            >
-              <div className="text-left absolute bottom-6">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
-                  OPEN SEASON COURSE
-                </h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] my-6 text-[20px] leading-normal">
-                  Represent your country in the great rift running course
-                  challenge!
-                </p>
-                <button className="bg-[#EC221F] text-[#FFFFFF] w-[300px] py-4 px-6 mt-4 font-[family-name:var(--font-roboto-extrabold)]">
-                  JOIN NOW
-                </button>
-              </div>
-            </div>
-            <div
-              className="h-[560px] w-[400px] p-6 relative"
-              style={{ backgroundImage: "url(/card-three.png)" }}
-            >
-              <div className="text-left absolute bottom-6">
-                <h2 className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[32px] leading-none">
-                  SCHOOL CAMP
-                </h2>
-                <p className="text-left text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] my-6 text-[20px] leading-normal">
-                  Premier camps with great views of the Rift Valley, perfect for
-                  holiday
-                </p>
-                <button className="bg-[#EC221F] text-[#FFFFFF] w-[300px] py-4 px-6 mt-4 font-[family-name:var(--font-roboto-extrabold)]">
-                  JOIN NOW
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center justify-between my-6 py-8 w-full">
-            <button>
-              <Image
-                src={"/arrow-left-white.svg"}
-                height={48}
-                width={42}
-                alt="great rift run"
-              />
-            </button>
-            <button>
-              <Image
-                src={"/arrow-right-white.svg"}
-                height={48}
-                width={42}
-                alt="great rift run"
-              />
-            </button>
-          </div>
-        </div>
+        <ExperiencesCarousel/>
       </div>
 
       {/* Our experiences */}
