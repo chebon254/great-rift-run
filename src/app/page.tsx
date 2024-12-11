@@ -1,3 +1,4 @@
+import { Founders } from "@/components/Founders/Founders";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,72 +50,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14">
-          <div className="mx-auto max-w-7xl">
-            <div className="flex items-center justify-evenly mb-6">
-              <div className="-mt-[200px]">
-                <Image
-                  src={"/eliud-kipchoge.png"}
-                  height={400}
-                  width={400}
-                  alt="great rift run eliud kipchoge"
-                />
-                <h1 className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[36px] py-6 leading-[40px]">
-                  ELIUD KIPCHOGE
-                </h1>
-                <p className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[24px] leading-[24px]">
-                  World Marathon Champion
-                </p>
-              </div>
-              <div className="-mt-[200px]">
-                <Image
-                  src={"/eliud-kipchoge.png"}
-                  height={400}
-                  width={400}
-                  alt="great rift run eliud kipchoge"
-                />
-                <h1 className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[36px] py-6 leading-[40px]">
-                  ELIUD KIPCHOGE
-                </h1>
-                <p className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[24px] leading-[24px]">
-                  World Marathon Champion
-                </p>
-              </div>
-              <div className="-mt-[200px]">
-                <Image
-                  src={"/eliud-kipchoge.png"}
-                  height={400}
-                  width={400}
-                  alt="great rift run eliud kipchoge"
-                />
-                <h1 className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[36px] py-6 leading-[40px]">
-                  ELIUD KIPCHOGE
-                </h1>
-                <p className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[24px] leading-[24px]">
-                  World Marathon Champion
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center justify-between my-6 pt-3 pb-4 w-full">
-              <button>
-                <Image
-                  src={"/arrow-left.svg"}
-                  height={48}
-                  width={42}
-                  alt="great rift run"
-                />
-              </button>
-              <button>
-                <Image
-                  src={"/arrow-right.svg"}
-                  height={48}
-                  width={42}
-                  alt="great rift run"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
+        <Founders />
       </div>
 
       {/* Details */}

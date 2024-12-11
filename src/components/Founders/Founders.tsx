@@ -1,93 +1,72 @@
-"use client"
-import { useState, useRef } from "react";
+import * as React from "react";
 import Image from "next/image";
 
-const Carousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const cardRef = useRef<HTMLDivElement>(null);
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-  const cards = [
-    {
-      image: "/eliud-kipchoge.png",
-      title: "ELIUD KIPCHOGE",
-      description: "World Marathon Champion"
-    },
-    {
-      image: "/eliud-kipchoge.png",
-      title: "ELIUD KIPCHOGE",
-      description: "World Marathon Champion"
-    },
-    {
-      image: "/eliud-kipchoge.png",
-      title: "ELIUD KIPCHOGE",
-      description: "World Marathon Champion"
-    }
-  ];
-
-  const goToNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
-  };
-
-  const goToPrev = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
-  };
+export function Founders() {
+  const items = Array.from({ length: 3 }).map((_, index) => ({
+    imageSrc: "/eliud-kipchoge.png",
+    name: "ELIUD KIPCHOGE",
+    title: "World Marathon Champion",
+  }));
 
   return (
-    <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14">
-      <div className=" mx-auto max-w-7xl">
-        <div className="flex items-center justify-evenly mb-6">
-          <div className="relative w-full overflow-x-hidden">
-            <div
-              className="flex transition-transform duration-300 -mt-[200px] ease-in-out"
-              ref={cardRef}
-              style={{
-                transform: `translateX(-${activeIndex * 100}%)`
-              }}
-            >
-              {cards.map((card, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-full flex flex-col items-center"
-                >
-                  <Image
-                    src={card.image}
-                    height={400}
-                    width={400}
-                    alt="great rift run eliud kipchoge"
-                  />
-                  <h1 className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[36px] py-6 leading-[40px]">
-                    {card.title}
-                  </h1>
-                  <p className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[24px] leading-[24px]">
-                    {card.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+    <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14 overflow-y-visible">
+      <div className="mx-auto max-w-7xl overflow-y-visible">
+        <Carousel className="w-full overflow-y-visible">
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {items.map((item, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+              >
+                <Card>
+                  <CardContent className="-mt-[200px] p-0 overflow-hidden -pt-2">
+                    <Image
+                      src={item.imageSrc}
+                      height={400}
+                      width={400}
+                      alt={`Image of ${item.name}`}
+                      className="align-middle -mt-2"
+                    />
+                    <h1 className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[36px] py-6 leading-[40px]">
+                      {item.name}
+                    </h1>
+                    <p className="text-left text-[#000000] font-[family-name:var(--font-roboto-bold)] text-[24px] leading-[24px]">
+                      {item.title}
+                    </p>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-between my-6 pt-3 pb-4 w-full">
+            <CarouselPrevious>
+              <Image
+                src="/arrow-left.svg"
+                height={48}
+                width={42}
+                alt="Next"
+              />
+            </CarouselPrevious>
+            <CarouselNext>
+              <Image
+                src="/arrow-right.svg"
+                height={48}
+                width={42}
+                alt="Next"
+              />
+            </CarouselNext>
           </div>
-        </div>
-
-        <div className="flex items-center justify-between my-6 pt-3 pb-4 w-full">
-          <button onClick={goToPrev}>
-            <Image
-              src="/arrow-left.svg"
-              height={48}
-              width={42}
-              alt="left arrow"
-            />
-          </button>
-          <button onClick={goToNext}>
-            <Image
-              src="/arrow-right.svg"
-              height={48}
-              width={42}
-              alt="right arrow"
-            />
-          </button>
-        </div>
+        </Carousel>
       </div>
     </div>
   );
-};
-
-export default Carousel;
+}
