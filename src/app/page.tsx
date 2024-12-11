@@ -12,7 +12,7 @@ export default function Home() {
         className="h-screen w-full bg-cover bg-center"
         style={{ backgroundImage: "url(/hero-image.png)" }}
       >
-        <div className="mx-auto max-w-7xl h-full flex justify-center items-center">
+        <div className="mx-auto max-w-7xl px-4 h-full flex justify-center items-center">
           <div className="h-fit text-left w-full px-4 md:px-8">
             {/* Headings */}
             <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[60px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]">
@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* About */}
       <div className="bg-[#1B1B1A] h-fits" id="about-nav">
-        <div className="mx-auto max-w-7xl py-20 px-4">
+        <div className="mx-auto max-w-7xl px-4 py-20">
           <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl pb-8">
             ABOUT US
           </h1>
@@ -59,7 +59,7 @@ export default function Home() {
         className="w-full bg-cover bg-center py-40"
         style={{ backgroundImage: "url(/runners.png)" }}
       >
-        <div className="mx-auto max-w-7xl flex items-center justify-evenly flex-wrap">
+        <div className="mx-auto max-w-7xl px-4 flex items-center justify-evenly flex-wrap">
           <div className="py-10 px-5 text-center md:text-left">
             <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
               195
@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* Details */}
       <div className="bg-[#009951] w-full">
-        <div className="mx-auto max-w-7xl py-20">
+        <div className="mx-auto max-w-7xl px-4 py-20">
           {/* Text Section */}
           <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
             Iten is situated in the west of Kenya, at an altitude of 8000ft
@@ -141,12 +141,12 @@ export default function Home() {
 
       {/* Programs */}
       <div id="programs-nav" className="bg-[#009951] w-full">
-        <ExperiencesCarousel/>
+        <ExperiencesCarousel />
       </div>
 
       {/* Our experiences */}
       <div className="w-full bg-[#FFFFFF] py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl px-4">
           <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">
             OUR EXPERIENCES
           </h1>
@@ -211,7 +211,7 @@ export default function Home() {
 
       {/* Testimonial */}
       <div className="bg-[#1E1E1E] w-full py-10">
-        <div className="mx-auto max-w-7xl flex items-start justify-between">
+        <div className="mx-auto max-w-7xl px-4 flex items-start justify-between flex-wrap">
           <div className="md:w-1/2">
             <h1 className="text-left mt-8 text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-[64px] leading-none">
               JOIN THE BAND, EVERYONE&apos;S A WINNER
@@ -281,7 +281,7 @@ export default function Home() {
 
       {/* Stories */}
       <div className="w-full bg-[#FFFFFF] py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl px-4">
           <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-[94px]">
             STORIES FROM THE RIFT
           </h1>
