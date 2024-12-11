@@ -48,7 +48,7 @@ export function Founders() {
             ))}
           </CarouselContent>
           <div className="flex justify-between my-6 pt-3 pb-4 w-full">
-            <CarouselPrevious>
+            <CarouselPrevious imgSrc="/arrow-left.svg" className="bg-white hover:bg-white">
               <Image
                 src="/arrow-left.svg"
                 height={48}
@@ -56,7 +56,7 @@ export function Founders() {
                 alt="Next"
               />
             </CarouselPrevious>
-            <CarouselNext>
+            <CarouselNext imgSrc="/arrow-right.svg" className="bg-white hover:bg-white">
               <Image
                 src="/arrow-right.svg"
                 height={48}

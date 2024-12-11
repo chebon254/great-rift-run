@@ -65,22 +65,8 @@ export function ExperiencesCarousel() {
           ))}
         </CarouselContent>
         <div className="flex items-center justify-between my-6 py-8 w-full">
-          <CarouselPrevious>
-            <Image
-              src="/arrow-left-white.svg"
-              height={48}
-              width={42}
-              alt="Previous"
-            />
-          </CarouselPrevious>
-          <CarouselNext>
-            <Image
-              src="/arrow-right-white.svg"
-              height={48}
-              width={42}
-              alt="Next"
-            />
-          </CarouselNext>
+          <CarouselPrevious imgSrc="/arrow-left-white.svg" className="bg-[#009951] hover:bg-[#009951]"></CarouselPrevious>
+          <CarouselNext imgSrc="/arrow-right-white.svg" className="bg-[#009951] hover:bg-[#009951]"></CarouselNext>
         </div>
       </Carousel>
     </div>

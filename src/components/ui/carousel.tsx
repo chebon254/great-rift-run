@@ -194,11 +194,10 @@ const CarouselItem = React.forwardRef<
   );
 });
 CarouselItem.displayName = "CarouselItem";
-
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  React.ComponentProps<typeof Button> & { imgSrc?: string }
+>(({ className, variant = "outline", size = "icon", imgSrc = "/arrow-left.svg", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
@@ -208,13 +207,13 @@ const CarouselPrevious = React.forwardRef<
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
-      className="bg-white hover:bg-white"
+      className={cn(className)}
     >
       <Image
-        src={"/arrow-left.svg"}
+        src={imgSrc}
         height={48}
         width={42}
-        alt="great rift run"
+        alt="Previous slide"
       />
       <span className="sr-only">Previous slide</span>
     </Button>
@@ -224,8 +223,8 @@ CarouselPrevious.displayName = "CarouselPrevious";
 
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  React.ComponentProps<typeof Button> & { imgSrc?: string }
+>(({ className, variant = "outline", size = "icon", imgSrc = "/arrow-right.svg", ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (
@@ -235,13 +234,13 @@ const CarouselNext = React.forwardRef<
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
-      className="bg-white hover:bg-white"
+      className={cn(className)}
     >
       <Image
-        src={"/arrow-right.svg"}
+        src={imgSrc}
         height={48}
         width={42}
-        alt="great rift run"
+        alt="Next slide"
       />
       <span className="sr-only">Next slide</span>
     </Button>
