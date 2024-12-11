@@ -11,11 +11,23 @@ import {
 } from "@/components/ui/carousel";
 
 export function Founders() {
-  const items = Array.from({ length: 3 }).map((_, index) => ({
-    imageSrc: "/eliud-kipchoge.png",
-    name: "ELIUD KIPCHOGE",
-    title: "World Marathon Champion",
-  }));
+  const items = [
+    {
+      imageSrc: "/eliud-kipchoge.png",
+      name: "ELIUD KIPCHOGE",
+      title: "World Marathon Champion",
+    },
+    {
+      imageSrc: "/eliud-kipchoge.png",
+      name: "ELIUD KIPCHOGE 2",
+      title: "World Marathon Champion",
+    },
+    {
+      imageSrc: "/eliud-kipchoge.png",
+      name: "ELIUD KIPCHOGE 3",
+      title: "World Marathon Champion",
+    },
+  ];
 
   return (
     <div className="mt-[240px] bg-[#FFFFFF] w-full pb-14 overflow-y-visible">
@@ -48,22 +60,14 @@ export function Founders() {
             ))}
           </CarouselContent>
           <div className="flex justify-between my-6 pt-3 pb-4 w-full">
-            <CarouselPrevious imgSrc="/arrow-left.svg" className="bg-white hover:bg-white">
-              <Image
-                src="/arrow-left.svg"
-                height={48}
-                width={42}
-                alt="Next"
-              />
-            </CarouselPrevious>
-            <CarouselNext imgSrc="/arrow-right.svg" className="bg-white hover:bg-white">
-              <Image
-                src="/arrow-right.svg"
-                height={48}
-                width={42}
-                alt="Next"
-              />
-            </CarouselNext>
+            <CarouselPrevious
+              imgSrc="/arrow-left.svg"
+              className="bg-white hover:bg-white"
+            ></CarouselPrevious>
+            <CarouselNext
+              imgSrc="/arrow-right.svg"
+              className="bg-white hover:bg-white"
+            ></CarouselNext>
           </div>
         </Carousel>
       </div>
