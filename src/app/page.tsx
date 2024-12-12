@@ -45,7 +45,7 @@ export default function Home() {
               </motion.h1>
             </StaggerContainer>
 
-            <ScrollReveal variant="slideInLeft" className="mt-8">
+            <ScrollReveal variant="slideInLeft">
               <button className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
                 JOIN THE GREAT RUN
               </button>
@@ -82,7 +82,7 @@ export default function Home() {
             </motion.p>
           </StaggerContainer>
         </div>
-        <ScrollReveal variant="fadeIn" className="mt-8">
+        <ScrollReveal variant="fadeIn">
           <Founders />
         </ScrollReveal>
       </div>
@@ -93,7 +93,7 @@ export default function Home() {
         style={{ backgroundImage: "url(/runners.png)" }}
       >
         <div className="mx-auto max-w-7xl px-4 flex items-center justify-evenly flex-wrap">
-          <ScrollReveal variant="slideInLeft" className="mt-8">
+          <ScrollReveal variant="slideInLeft">
             <div className="py-10 px-5 text-center md:text-left">
               <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
                 195
@@ -106,7 +106,7 @@ export default function Home() {
               </p>
             </div>
           </ScrollReveal>
-          <ScrollReveal variant="scaleUp" className="mt-8">
+          <ScrollReveal variant="scaleUp">
             <div className="py-10 px-5 text-center md:text-left">
               <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
                 5
@@ -119,7 +119,7 @@ export default function Home() {
               </p>
             </div>
           </ScrollReveal>
-          <ScrollReveal variant="slideInRight" className="mt-8">
+          <ScrollReveal variant="slideInRight">
             <div className="py-10 px-5 text-center md:text-left">
               <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
                 100
@@ -139,41 +139,56 @@ export default function Home() {
       <div className="bg-[#009951] w-full">
         <div className="mx-auto max-w-7xl px-4 py-20">
           {/* Text Section */}
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
-            Iten is situated in the west of Kenya, at an altitude of 8000ft
-            above sea level. Iten is the perfect training environment for long
-            distance runners, and has been referred regularly as, &ldquo;The
-            Home of Champions.&rdquo;
-          </p>
-          <p className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
-            We at the Great Rift Run seek to provide an exceptional experience
-            in the Great Rift Valley.
-          </p>
+          <StaggerContainer staggerChildren={0.3}>
+            <motion.p
+              variants={fadeInVariants}
+              className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4"
+            >
+              Iten is situated in the west of Kenya, at an altitude of 8000ft
+              above sea level. Iten is the perfect training environment for long
+              distance runners, and has been referred regularly as, &ldquo;The
+              Home of Champions.&rdquo;
+            </motion.p>
+            <motion.p
+              variants={fadeInVariants}
+              className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4"
+            >
+              We at the Great Rift Run seek to provide an exceptional experience
+              in the Great Rift Valley.
+            </motion.p>
+          </StaggerContainer>
 
           {/* Image Section */}
           <div className="flex items-center justify-center sm:justify-between mt-32 py-6 flex-wrap">
-            <Image
-              src="/bookingcom-logo.svg"
-              width={331} // Optional, scales with height automatically
-              height={56} // Optional, scales with width automatically
-              alt="great rift run"
-              className="my-4"
-            />
+            <ScrollReveal variant="slideInLeft">
+              <Image
+                src="/bookingcom-logo.svg"
+                width={331} // Optional, scales with height automatically
+                height={56} // Optional, scales with width automatically
+                alt="great rift run"
+                className="my-4"
+              />
+            </ScrollReveal>
 
-            <Image
-              src={"/Tripadvisor_Logo.svg"}
-              height={64}
-              width={300}
-              alt="great rift run"
-              className="my-4"
-            />
-            <Image
-              src={"/Trustpilot_logo.svg"}
-              height={64}
-              width={281}
-              alt="great rift run"
-              className="my-4"
-            />
+            <ScrollReveal variant="fadeIn">
+              <Image
+                src={"/Tripadvisor_Logo.svg"}
+                height={64}
+                width={300}
+                alt="great rift run"
+                className="my-4"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal variant="slideInRight">
+              <Image
+                src={"/Trustpilot_logo.svg"}
+                height={64}
+                width={281}
+                alt="great rift run"
+                className="my-4"
+              />
+            </ScrollReveal>
           </div>
         </div>
       </div>
@@ -186,9 +201,14 @@ export default function Home() {
       {/* Our experiences */}
       <div className="w-full bg-[#FFFFFF] py-10">
         <div className="mx-auto max-w-7xl px-4">
-          <h1 className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl">
-            OUR EXPERIENCES
-          </h1>
+          <StaggerContainer staggerChildren={0.3}>
+            <motion.h1
+              variants={fadeInVariants}
+              className="text-center text-[#303030] my-10 font-[family-name:var(--font-roboto-bold)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl"
+            >
+              OUR EXPERIENCES
+            </motion.h1>
+          </StaggerContainer>
           <div className="my-[50px] flex items-center justify-center flex-wrap">
             <div className="m-3 h-[320px] w-[320px]">
               <Image
