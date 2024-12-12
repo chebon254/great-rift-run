@@ -1,13 +1,22 @@
+"use client";
+
 import { Founders } from "@/components/Founders/Founders";
 import { ExperiencesCarousel } from "@/components/Programs/Programs";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  fadeInVariants,
+} from "@/components/ScrollAnimations/ScrollReveal";
 
 export default function Home() {
   return (
     <main className="w-full h-fit absolute top-0 z-40">
       <div id="top-nav"></div>
+
       {/* Hero */}
       <div
         className="h-screen w-full bg-cover bg-center"
@@ -15,21 +24,32 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-4 h-full flex justify-center items-center">
           <div className="h-fit text-left w-full px-4 md:px-8">
-            {/* Headings */}
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]">
-              RUN
-            </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#EC221F] leading-[64px] sm:leading-[96px] md:leading-[120px]">
-              WITH
-            </h1>
-            <h1 className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#FFFFFF] leading-[64px] sm:leading-[96px] md:leading-[120px]">
-              CHAMPIONS
-            </h1>
+            <StaggerContainer staggerChildren={0.3}>
+              <motion.h1
+                variants={fadeInVariants}
+                className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#14AE5C] leading-[64px] sm:leading-[96px] md:leading-[120px]"
+              >
+                RUN
+              </motion.h1>
+              <motion.h1
+                variants={fadeInVariants}
+                className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#EC221F] leading-[64px] sm:leading-[96px] md:leading-[120px]"
+              >
+                WITH
+              </motion.h1>
+              <motion.h1
+                variants={fadeInVariants}
+                className="font-[family-name:var(--font-opensans-condensed-extrabold-italic)] text-[40px] sm:text-[96px] md:text-[128px] text-[#FFFFFF] leading-[64px] sm:leading-[96px] md:leading-[120px]"
+              >
+                CHAMPIONS
+              </motion.h1>
+            </StaggerContainer>
 
-            {/* Button */}
-            <button className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
-              JOIN THE GREAT RUN
-            </button>
+            <ScrollReveal variant="slideInLeft" className="mt-8">
+              <button className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
+                JOIN THE GREAT RUN
+              </button>
+            </ScrollReveal>
           </div>
         </div>
       </div>
@@ -37,22 +57,34 @@ export default function Home() {
       {/* About */}
       <div className="bg-[#1B1B1A] h-fits overflow-hidden" id="about-nav">
         <div className="mx-auto max-w-7xl px-4 py-20">
-          <h1 className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-8xl pb-8">
-            ABOUT US
-          </h1>
-          <p className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
-            Iten is situated in the west of Kenya, at an altitude of 8000ft
-            above sea level. Iten is the perfect training environment for long
-            distance runners, and has been referred regularly as, &ldquo;The
-            Home of Champions.&rdquo;
-          </p>
-          <p className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4">
-            We seek to provide this exceptional experience to you, in the Great
-            Rift Valley.
-          </p>
+          <StaggerContainer staggerChildren={0.3}>
+            <motion.h1
+              variants={fadeInVariants}
+              className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-8xl pb-8"
+            >
+              ABOUT US
+            </motion.h1>
+            <motion.p
+              variants={fadeInVariants}
+              className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4"
+            >
+              Iten is situated in the west of Kenya, at an altitude of 8000ft
+              above sea level. Iten is the perfect training environment for long
+              distance runners, and has been referred regularly as, &ldquo;The
+              Home of Champions.&rdquo;
+            </motion.p>
+            <motion.p
+              variants={fadeInVariants}
+              className="text-center text-white font-[family-name:var(--font-roboto-bold)] text-lg sm:text-xl md:text-2xl py-4"
+            >
+              We seek to provide this exceptional experience to you, in the
+              Great Rift Valley.
+            </motion.p>
+          </StaggerContainer>
         </div>
-
-        <Founders />
+        <ScrollReveal variant="fadeIn" className="mt-8">
+          <Founders />
+        </ScrollReveal>
       </div>
 
       {/* Details */}
@@ -61,39 +93,45 @@ export default function Home() {
         style={{ backgroundImage: "url(/runners.png)" }}
       >
         <div className="mx-auto max-w-7xl px-4 flex items-center justify-evenly flex-wrap">
-          <div className="py-10 px-5 text-center md:text-left">
-            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
-              195
-            </h1>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              RUNNERS
-            </p>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              REGISTERED
-            </p>
-          </div>
-          <div className="py-10 px-5 text-center md:text-left">
-            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
-              5
-            </h1>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              EVENTS
-            </p>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              HELD
-            </p>
-          </div>
-          <div className="py-10 px-5 text-center md:text-left">
-            <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
-              100
-            </h1>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              MILES
-            </p>
-            <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
-              COVERED
-            </p>
-          </div>
+          <ScrollReveal variant="slideInLeft" className="mt-8">
+            <div className="py-10 px-5 text-center md:text-left">
+              <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+                195
+              </h1>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                RUNNERS
+              </p>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                REGISTERED
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal variant="scaleUp" className="mt-8">
+            <div className="py-10 px-5 text-center md:text-left">
+              <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+                5
+              </h1>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                EVENTS
+              </p>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                HELD
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal variant="slideInRight" className="mt-8">
+            <div className="py-10 px-5 text-center md:text-left">
+              <h1 className="text-white font-[family-name:var(--font-opensans-bold)] text-[64px] leading-none">
+                100
+              </h1>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                MILES
+              </p>
+              <p className="text-white font-[family-name:var(--font-roboto-bold)] text-[48px] leading-none">
+                COVERED
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
 
@@ -224,7 +262,7 @@ export default function Home() {
               alt="great rift run"
               className="mt-[100px]"
             />
-            <Testimonials/>
+            <Testimonials />
           </div>
           <div className="md:w-1/2 px-2 w-full">
             <Image
