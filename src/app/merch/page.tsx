@@ -13,7 +13,7 @@ import Stories from "@/components/Stories/Stories";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 
-function merch() {
+function Merch() {
   const [activeTab, setActiveTab] = React.useState("T-SHIRTS");
 
   const productData = [
@@ -294,4 +294,4 @@ function merch() {
   );
 }
 
-export default merch;
+export default Merch;
