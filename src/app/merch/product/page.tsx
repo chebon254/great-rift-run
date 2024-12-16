@@ -56,7 +56,9 @@ function productDetail() {
           <div className="flex flex-col items-center space-y-4">
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               <Image
-                src="https://via.placeholder.com/300x300?text=Main+T-Shirt"
+                src="/300x300.png"
+                height={300}
+                width={300}
                 alt="GRR Patriot T-Shirt"
                 className="w-full h-full object-cover rounded-md"
               />
@@ -80,22 +82,30 @@ function productDetail() {
 
             <div className="flex items-center justify-center space-x-2">
               <Image
-                src="https://via.placeholder.com/60"
+                src="/60x60.png"
+                height={60}
+                width={60}
                 alt="Thumbnail"
                 className="w-20 h-20 border-2 border-green-600 rounded-md cursor-pointer"
               />
               <Image
-                src="https://via.placeholder.com/60"
+                src="/60x60.png"
+                height={60}
+                width={60}
                 alt="Thumbnail"
                 className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />
               <Image
-                src="https://via.placeholder.com/60"
+                src="/60x60.png"
+                height={60}
+                width={60}
                 alt="Thumbnail"
                 className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />
               <Image
-                src="https://via.placeholder.com/60"
+                src="/60x60.png"
+                height={60}
+                width={60}
                 alt="Thumbnail"
                 className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />

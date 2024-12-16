@@ -56,7 +56,7 @@ function Cart() {
                 >
                   <div className="flex items-center gap-4">
                     <Image
-                      src={"https://via.placeholder.com/60x60"}
+                      src={"/60x60.png"}
                       height={64}
                       width={64}
                       alt="T-Shirt"
