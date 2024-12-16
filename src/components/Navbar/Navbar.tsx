@@ -12,7 +12,7 @@ export default function Navbar({ className }: NavbarProps) {
 
   const navigation = [
     { name: 'HOME', href: '/#top-nav' },
-    { name: 'ABOUT', href: '/#about-nav' },
+    { name: 'MERCH', href: '/merch' },
     { name: 'PROGRAMS', href: '/#programs-nav' },
     { name: 'CONTACT', href: '/#contact-nav' },
   ]

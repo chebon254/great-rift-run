@@ -80,7 +80,9 @@ export default function RootLayout({
           antialiased relative z-0`}
       >
         <Navbar className="sticky top-0 z-50" />
-        {children}
+        <main className="w-full h-fit absolute top-0 z-40">
+          {children}
+        </main>
       </body>
     </html>
   );
