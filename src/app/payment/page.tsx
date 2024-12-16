@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 
@@ -97,7 +96,7 @@ function Payment() {
 
             <div className="border rounded-md p-4 mb-4 flex items-center">
               <input type="radio" name="payment" className="mr-2  h-[24px] w-[24px]" />
-              <img
+              <Image
                 src={"/visa.svg"}
                 height={48}
                   width={48}
@@ -109,7 +108,7 @@ function Payment() {
 
             <div className="border rounded-md p-4 flex items-center">
               <input type="radio" name="payment" className="mr-2 h-[24px] w-[24px]" />
-              <img
+              <Image
                 src={"/paypal.svg"}
                 height={40}
                 width={40}
@@ -123,7 +122,7 @@ function Payment() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
             <div className="flex items-center mb-4">
-              <img
+              <Image
                 src="https://via.placeholder.com/50"
                 alt="T-shirt"
                 className="w-14 h-14"

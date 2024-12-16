@@ -124,8 +124,10 @@ function Checkout() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
             <div className="flex items-center mb-4">
-              <img
-                src="https://via.placeholder.com/50"
+              <Image
+                src={"https://via.placeholder.com/50"}
+                height={48}
+                width={48}
                 alt="T-shirt"
                 className="w-12 h-12 rounded"
               />

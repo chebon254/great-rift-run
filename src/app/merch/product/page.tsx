@@ -52,42 +52,52 @@ function productDetail() {
 
       {/* Detail */}
       <div className="mx-auto max-w-7xl w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white shadow-md rounded-md p-6 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-md p-6 w-full">
           <div className="flex flex-col items-center space-y-4">
-            <div className="relative w-72 h-72 md:w-80 md:h-80">
-              <img
+            <div className="relative w-72 h-72 md:w-96 md:h-96">
+              <Image
                 src="https://via.placeholder.com/300x300?text=Main+T-Shirt"
                 alt="GRR Patriot T-Shirt"
                 className="w-full h-full object-cover rounded-md"
               />
-              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer">
-                &larr;
+              <div className="absolute top-1/2 left-1 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 h-[48px] w-[54px] rounded-sm p-2 cursor-pointer flex items-center justify-center">
+                <Image
+                  src={"/left-grey-arrow.svg"}
+                  height={25}
+                  width={32}
+                  alt="Great Rift Run"
+                />
               </div>
-              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 cursor-pointer">
-                &rarr;
+              <div className="absolute top-1/2 right-1 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 h-[48px] w-[54px] rounded-sm p-2 cursor-pointer flex items-center justify-center">
+                <Image
+                  src={"/right-grey-arrow.svg"}
+                  height={25}
+                  width={32}
+                  alt="Great Rift Run"
+                />
               </div>
             </div>
 
             <div className="flex items-center justify-center space-x-2">
-              <img
+              <Image
                 src="https://via.placeholder.com/60"
                 alt="Thumbnail"
-                className="w-16 h-16 border-2 border-green-600 rounded-md cursor-pointer"
+                className="w-20 h-20 border-2 border-green-600 rounded-md cursor-pointer"
               />
-              <img
+              <Image
                 src="https://via.placeholder.com/60"
                 alt="Thumbnail"
-                className="w-16 h-16 border-2 rounded-md cursor-pointer"
+                className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />
-              <img
+              <Image
                 src="https://via.placeholder.com/60"
                 alt="Thumbnail"
-                className="w-16 h-16 border-2 rounded-md cursor-pointer"
+                className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />
-              <img
+              <Image
                 src="https://via.placeholder.com/60"
                 alt="Thumbnail"
-                className="w-16 h-16 border-2 rounded-md cursor-pointer"
+                className="w-20 h-20 border-2 rounded-md cursor-pointer"
               />
             </div>
           </div>

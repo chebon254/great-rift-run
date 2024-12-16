@@ -4,7 +4,6 @@ import { Founders } from "@/components/Founders/Founders";
 import { ExperiencesCarousel } from "@/components/Programs/Programs";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ScrollReveal,

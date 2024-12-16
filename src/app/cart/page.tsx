@@ -55,8 +55,10 @@ function Cart() {
                   className="flex items-center justify-between border-b pb-2"
                 >
                   <div className="flex items-center gap-4">
-                    <img
-                      src="https://via.placeholder.com/60x60"
+                    <Image
+                      src={"https://via.placeholder.com/60x60"}
+                      height={64}
+                      width={64}
                       alt="T-Shirt"
                       className="w-16 h-16 object-cover rounded-md"
                     />

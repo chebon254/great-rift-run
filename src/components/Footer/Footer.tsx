@@ -6,7 +6,6 @@ import {
 } from "@/components/ScrollAnimations/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
-import Socials from "./Socials";
 
 function Footer() {
   return (

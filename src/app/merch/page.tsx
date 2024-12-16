@@ -132,30 +132,30 @@ function merch() {
           image: "/products/shirts/mockup-shirt.png",
         },
         {
-            name: "GRR WATER2",
-            price: 2000,
-            image: "/products/shirts/mockup-shirt.png",
-          },
-          {
-            name: "GRR WATER3",
-            price: 3000,
-            image: "/products/shirts/mockup-shirt.png",
-          },
-          {
-            name: "GRR WATER4",
-            price: 4000,
-            image: "/products/shirts/mockup-shirt.png",
-          },
-          {
-            name: "GRR WATER5",
-            price: 5000,
-            image: "/products/shirts/mockup-shirt.png",
-          },
-          {
-            name: "GRR WATER6",
-            price: 6000,
-            image: "/products/shirts/mockup-shirt.png",
-          },
+          name: "GRR WATER2",
+          price: 2000,
+          image: "/products/shirts/mockup-shirt.png",
+        },
+        {
+          name: "GRR WATER3",
+          price: 3000,
+          image: "/products/shirts/mockup-shirt.png",
+        },
+        {
+          name: "GRR WATER4",
+          price: 4000,
+          image: "/products/shirts/mockup-shirt.png",
+        },
+        {
+          name: "GRR WATER5",
+          price: 5000,
+          image: "/products/shirts/mockup-shirt.png",
+        },
+        {
+          name: "GRR WATER6",
+          price: 6000,
+          image: "/products/shirts/mockup-shirt.png",
+        },
       ],
     },
   ];
@@ -225,65 +225,71 @@ function merch() {
       </div>
 
       {/* Products */}
-      <div className="bg-[#FFFFFF] h-fits overflow-hidden" id="products-nav">
-        <div className="mx-auto max-w-7xl px-4 py-20">
-          <StaggerContainer staggerChildren={0.3}>
-            {/* Tabs */}
-            <div className="flex justify-center gap-4 mb-8">
-              {["T-SHIRTS", "HOODIES", "CAPS", "WATER"].map((tab) => (
-                <button
-                  key={tab}
-                  className={`px-4 py-2 font-[family-name:var(--font-roboto-bold)] tracking-[1px] ${
-                    activeTab === tab
-                      ? "bg-[#434343] text-white"
-                      : "bg-gray-200 text-gray-700"
-                  }`}
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-
-            {/* Products */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {productData
-                .find((data) => data.category === activeTab)
-                ?.products.map((product) => (
-                  <Link
-                    href={"/merch/product"}
-                    key={product.name}
-                    className="bg-white rounded-md text-center"
+      <ScrollReveal variant="fadeIn">
+        <div className="bg-[#FFFFFF] h-fits overflow-hidden" id="products-nav">
+          <div className="mx-auto max-w-7xl px-4 py-20">
+            <StaggerContainer staggerChildren={0.3}>
+              {/* Tabs */}
+              <div className="flex justify-center gap-4 mb-8">
+                {["T-SHIRTS", "HOODIES", "CAPS", "WATER"].map((tab) => (
+                  <button
+                    key={tab}
+                    className={`px-4 py-2 font-[family-name:var(--font-roboto-bold)] tracking-[1px] ${
+                      activeTab === tab
+                        ? "bg-[#434343] text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                    onClick={() => setActiveTab(tab)}
                   >
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={300}
-                      height={300}
-                      className="rounded-t-md mx-auto"
-                    />
-                    <div className="p-4 text-center">
-                      <h3 className=" font-[family-name:var(--font-roboto-bold)] text-lg">{product.name}</h3>
-                      <p className=" font-[family-name:var(--font-roboto-bold)] text-gray-600">KES {product.price}</p>
-                      <button className="bg-[#14AE5C] hidden text-white px-4 py-2 mt-4">
-                        Add to Cart
-                      </button>
-                    </div>
-                  </Link>
+                    {tab}
+                  </button>
                 ))}
-            </div>
-          </StaggerContainer>
+              </div>
+
+              {/* Products */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {productData
+                  .find((data) => data.category === activeTab)
+                  ?.products.map((product) => (
+                    <Link
+                      href={"/merch/product"}
+                      key={product.name}
+                      className="bg-white rounded-md text-center"
+                    >
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        width={300}
+                        height={300}
+                        className="rounded-t-md mx-auto"
+                      />
+                      <div className="p-4 text-center">
+                        <h3 className=" font-[family-name:var(--font-roboto-bold)] text-lg">
+                          {product.name}
+                        </h3>
+                        <p className=" font-[family-name:var(--font-roboto-bold)] text-gray-600">
+                          KES {product.price}
+                        </p>
+                        <button className="bg-[#14AE5C] hidden text-white px-4 py-2 mt-4">
+                          Add to Cart
+                        </button>
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </StaggerContainer>
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Stories */}
-      <Stories/>
+      <Stories />
 
       {/* Socials */}
-      <Socials/>
+      <Socials />
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </>
   );
 }
