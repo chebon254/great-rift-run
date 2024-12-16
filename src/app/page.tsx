@@ -13,6 +13,7 @@ import {
 } from "@/components/ScrollAnimations/ScrollReveal";
 import Stories from "@/components/Stories/Stories";
 import Footer from "@/components/Footer/Footer";
+import Socials from "@/components/Footer/Socials";
 
 export default function Home() {
   return (
@@ -312,6 +313,9 @@ export default function Home() {
 
       {/* Stories */}
       <Stories/>
+
+      {/* Socials */}
+      <Socials/>
 
       {/* Footer */}
       <Footer/>

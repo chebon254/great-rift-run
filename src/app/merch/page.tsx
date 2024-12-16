@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Stories from "@/components/Stories/Stories";
 import Footer from "@/components/Footer/Footer";
+import Socials from "@/components/Footer/Socials";
 
 function merch() {
   const [activeTab, setActiveTab] = React.useState("T-SHIRTS");
@@ -249,7 +250,8 @@ function merch() {
               {productData
                 .find((data) => data.category === activeTab)
                 ?.products.map((product) => (
-                  <div
+                  <Link
+                    href={"/merch/product"}
                     key={product.name}
                     className="bg-white rounded-md text-center"
                   >
@@ -267,7 +269,7 @@ function merch() {
                         Add to Cart
                       </button>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           </StaggerContainer>
@@ -276,6 +278,9 @@ function merch() {
 
       {/* Stories */}
       <Stories/>
+
+      {/* Socials */}
+      <Socials/>
 
       {/* Footer */}
       <Footer/>

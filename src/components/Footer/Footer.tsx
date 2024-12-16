@@ -1,69 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import {
   ScrollReveal,
-  StaggerContainer,
-  fadeInVariants,
 } from "@/components/ScrollAnimations/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
+import Socials from "./Socials";
 
 function Footer() {
   return (
-    <div>
-
-      {/* Catch Us */}
-      <div
-        id="contact-nav"
-        className="w-full bg-cover bg-center"
-        style={{ backgroundImage: "url(/Socials.png)" }}
-      >
-        <div className="w-full h-full py-5">
-          <StaggerContainer staggerChildren={0.3}>
-            <motion.h1
-              variants={fadeInVariants}
-              className="text-center text-[#FFFFFF] font-[family-name:var(--font-roboto-medium)] my-5 text-[32px] leading-normal"
-            >
-              CATCH US ON
-            </motion.h1>
-          </StaggerContainer>
-          <div className="mx-auto flex items-center my-8 justify-evenly w-[200px]">
-            <ScrollReveal variant="slideInLeft">
-              <Link href={""}>
-                <Image
-                  src={"/facebook.svg"}
-                  height={40}
-                  width={25}
-                  alt="great rift run"
-                />
-              </Link>
-            </ScrollReveal>
-            <ScrollReveal variant="scaleUp">
-              <Link href={""}>
-                <Image
-                  src={"/instagram.svg"}
-                  height={40}
-                  width={35}
-                  alt="great rift run"
-                />
-              </Link>
-            </ScrollReveal>
-            <ScrollReveal variant="slideInRight">
-              <Link href={""}>
-                <Image
-                  src={"/x-twitter.svg"}
-                  height={40}
-                  width={40}
-                  alt="great rift run"
-                />
-              </Link>
-            </ScrollReveal>
-          </div>
-        </div>
-      </div>
-
+    <>
       {/* Footer */}
       <ScrollReveal variant="fadeIn">
         <footer className="bg-white my-8 py-8 px-4 md:px-16">
@@ -88,19 +35,19 @@ function Footer() {
               </h3>
               <ul className="mt-2 text-center md:text-left">
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <a href="#home">Home</a>
+                  <Link href="#home">Home</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <a href="#about">About</a>
+                  <Link href="#about">About</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <a href="#programs">Programs</a>
+                  <Link href="#programs">Programs</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <a href="#faq">FAQ</a>
+                  <Link href="#faq">FAQ</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <a href="#blog">Blog</a>
+                  <Link href="#blog">Blog</Link>
                 </li>
               </ul>
             </div>
@@ -122,7 +69,7 @@ function Footer() {
           </div>
         </footer>
       </ScrollReveal>
-    </div>
+    </>
   )
 }
 
