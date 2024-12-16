@@ -6,7 +6,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 
-function Checkout() {
+function Payment() {
   const products = [
     {
       name: "GRR PATRIOT",
@@ -35,7 +35,7 @@ function Checkout() {
         <div className="mx-auto max-w-7xl px-4 h-full flex justify-center items-center">
           <div className="h-fit text-left w-full px-4 md:px-8">
             <div className="text-left text-[#FFFFFF] my-10 font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              CHECKOUT
+              PAYMENT
             </div>
           </div>
         </div>
@@ -46,78 +46,77 @@ function Checkout() {
         <h2 className="text-lg font-bold mb-4">Your cart</h2>
         <div className="grid grid-cols-3 gap-8">
           <div className="col-span-2">
-            <h3 className="text-lg font-semibold mb-4">
-              1. Contact Information
-            </h3>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div>
-                <label className="block text-sm mb-1">First Name</label>
-                <input
-                  type="text"
-                  placeholder="Checkout"
-                  className="w-full border rounded-md p-2"
+            <h3 className="text-lg font-semibold mb-4">3. Payment Option</h3>
+            <div className="border rounded-md p-4 mb-4">
+              <div className="flex items-center mb-4">
+                <input type="radio" name="payment" className="mr-2  h-[24px] w-[24px]" />
+                <Image
+                  src={"/mastercard.svg"}
+                  height={40}
+                  width={40}
+                  alt="Mastercard"
+                  className="mr-2"
                 />
+                <span className="font-semibold">Debit/Credit Card</span>
               </div>
-              <div>
-                <label className="block text-sm mb-1">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Nameson"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Phone Number</label>
-                <input
-                  type="text"
-                  placeholder="555-555"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">E-mail</label>
-                <input
-                  type="email"
-                  placeholder="example@gmail.com"
-                  className="w-full border rounded-md p-2"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm mb-1">Name</label>
+                  <input
+                    type="text"
+                    placeholder="Cardashian Namur"
+                    className="w-full border rounded-md p-2"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Card Number</label>
+                  <input
+                    type="text"
+                    placeholder="1111-2222-3333-4444"
+                    className="w-full border rounded-md p-2"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Expiry</label>
+                  <input
+                    type="text"
+                    placeholder="12/12"
+                    className="w-full border rounded-md p-2"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">CCV</label>
+                  <input
+                    type="text"
+                    placeholder="***"
+                    className="w-full border rounded-md p-2"
+                  />
+                </div>
               </div>
             </div>
 
-            <h3 className="text-lg font-semibold mb-4">2. Delivery</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm mb-1">Delivery Date</label>
-                <input
-                  type="text"
-                  placeholder="November 25th, 2024"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Time</label>
-                <input
-                  type="text"
-                  placeholder="11:00AM - 1:00PM"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">City</label>
-                <input
-                  type="text"
-                  placeholder="Locality"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">E-mail</label>
-                <input
-                  type="email"
-                  placeholder="example@gmail.com"
-                  className="w-full border rounded-md p-2"
-                />
-              </div>
+            <div className="border rounded-md p-4 mb-4 flex items-center">
+              <input type="radio" name="payment" className="mr-2  h-[24px] w-[24px]" />
+              <img
+                src={"/visa.svg"}
+                height={48}
+                  width={48}
+                alt="Visa"
+                className="mr-2"
+              />
+              <span className="font-semibold">Visa</span>
+            </div>
+
+            <div className="border rounded-md p-4 flex items-center">
+              <input type="radio" name="payment" className="mr-2 h-[24px] w-[24px]" />
+              <img
+                src={"/paypal.svg"}
+                height={40}
+                width={40}
+                alt="PayPal"
+                className="mr-2"
+              />
+              <span className="font-semibold">PayPal</span>
             </div>
           </div>
 
@@ -127,7 +126,7 @@ function Checkout() {
               <img
                 src="https://via.placeholder.com/50"
                 alt="T-shirt"
-                className="w-12 h-12 rounded"
+                className="w-14 h-14"
               />
               <div className="ml-4">
                 <p className="font-semibold">GRR PATRIOT T-SHIRT</p>
@@ -149,13 +148,12 @@ function Checkout() {
               <p className="font-semibold">KES 4,000</p>
             </div>
 
-            <Link href={"/payment"} className="w-full bg-green-500 px-10 text-white py-2">
+            <button className="w-full bg-green-500 text-white py-2">
               Proceed with Payment
-            </Link>
+            </button>
           </div>
         </div>
       </div>
-
       {/* Related */}
       <div className="mx-auto max-w-7xl w-full py-10">
         <h3 className="text-center font-[family-name:var(--font-roboto-medium)] my-5 text-[32px] leading-normal mt-4">
@@ -196,4 +194,4 @@ function Checkout() {
   );
 }
 
-export default Checkout;
+export default Payment;
