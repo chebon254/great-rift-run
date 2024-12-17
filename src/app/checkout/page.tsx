@@ -43,79 +43,79 @@ function Checkout() {
 
       {/* Detail */}
       <div className="max-w-4xl mx-auto p-6">
-        <h2 className="text-lg font-bold mb-4">Your cart</h2>
+        <h2 className="text-lg font-[family-name:var(--font-roboto-bold)]  mb-4">Your cart</h2>
         <div className="grid grid-cols-3 gap-8">
           <div className="col-span-2">
-            <h3 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">
               1. Contact Information
             </h3>
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div>
-                <label className="block text-sm mb-1">First Name</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">First Name</label>
                 <input
                   type="text"
                   placeholder="Checkout"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">Last Name</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">Last Name</label>
                 <input
                   type="text"
                   placeholder="Nameson"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">Phone Number</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">Phone Number</label>
                 <input
                   type="text"
                   placeholder="555-555"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">E-mail</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">E-mail</label>
                 <input
                   type="email"
                   placeholder="example@gmail.com"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
             </div>
 
-            <h3 className="text-lg font-semibold mb-4">2. Delivery</h3>
+            <h3 className="text-lg font-semibold font-[family-name:var(--font-roboto-bold)] mb-4">2. Delivery</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm mb-1">Delivery Date</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">Delivery Date</label>
                 <input
                   type="text"
                   placeholder="November 25th, 2024"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">Time</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">Time</label>
                 <input
                   type="text"
                   placeholder="11:00AM - 1:00PM"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">City</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">City</label>
                 <input
                   type="text"
                   placeholder="Locality"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">E-mail</label>
+                <label className="block text-sm mb-1 text-[#757575]  font-[family-name:var(--font-roboto-medium)]">E-mail</label>
                 <input
                   type="email"
                   placeholder="example@gmail.com"
-                  className="w-full border rounded-md p-2"
+                  className="font-[family-name:var(--font-roboto-regular)] placeholder-[#B3B3B3] focus:outline-none focus:border-[#14AE5C] text-base w-full border rounded-md p-2"
                 />
               </div>
             </div>
@@ -123,6 +123,7 @@ function Checkout() {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
+            <div className="pb-20">
             <div className="flex items-center mb-4">
               <Image
                 src={"/50x50.png"}
@@ -136,6 +137,7 @@ function Checkout() {
                 <p>SMALL</p>
               </div>
               <p className="ml-auto font-semibold">2</p>
+            </div>
             </div>
 
             <div className="flex justify-between mb-2">
@@ -151,7 +153,7 @@ function Checkout() {
               <p className="font-semibold">KES 4,000</p>
             </div>
 
-            <Link href={"/payment"} className="w-full bg-green-500 px-10 text-white py-2">
+            <Link href={"/payment"} className="w-full block text-center mt-6 mb-3 bg-[#14AE5C] hover:bg-green-700 text-white py-2 px-10 text-base font-semibold transition">
               Proceed with Payment
             </Link>
           </div>

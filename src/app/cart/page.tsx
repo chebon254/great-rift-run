@@ -43,16 +43,16 @@ function Cart() {
 
       {/* Detail */}
       <div className="max-w-5xl mx-auto p-4 md:p-6 bg-white shadow-sm rounded-md">
-        <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6">
           {/* Cart Items */}
           <div>
-            <h2 className="font-bold text-lg mb-4">Your cart</h2>
+            <h2 className="font-[family-name:var(--font-roboto-bold)]  text-lg mb-4">Your cart</h2>
             <div className="space-y-4">
               {/* Cart Item */}
               {[1, 2, 3].map((_, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between border-b pb-2"
+                  className="flex items-center justify-between border-b pb-2 font-[family-name:var(--font-roboto-extrabold)]"
                 >
                   <div className="flex items-center gap-4">
                     <Image
@@ -63,9 +63,10 @@ function Cart() {
                       className="w-16 h-16 object-cover rounded-md"
                     />
                     <div>
-                      <p className="font-semibold text-gray-800">
+                      <p className="font-[family-name:var(--font-roboto-bold)]  text-gray-800">
                         GRR PATRIOT T-SHIRT SMALL
                       </p>
+                      <p className="font-semibold text-gray-800">SMALL</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-8">
@@ -89,28 +90,28 @@ function Cart() {
           </div>
 
           {/* Order Summary */}
-          <div className="p-4 rounded-md">
+          <div className="p-4 mt-5 rounded-md">
             <h3 className="font-bold text-lg mb-4">Order Summary</h3>
-            <div className="space-y-2 text-gray-700">
-              <div className="flex justify-between">
+            <div className="mb-2 w-full mt-14 text-gray-700">
+              <div className="flex justify-between my-3">
                 <span>Subtotal</span>
                 <span className="font-semibold">KES 2,000</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between my-3">
                 <span>Shipping</span>
                 <span className="font-semibold">KES 2,000</span>
               </div>
-              <div className="border-t pt-2 flex justify-between font-bold text-gray-900">
+              <div className="border-t pt-2 flex justify-between font-bold text-gray-900 my-3">
                 <span>Total</span>
                 <span>KES 4,000</span>
               </div>
-            </div>
-            <Link
+              <Link
               href={"/checkout"}
-              className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-2 px-10 text-lg font-semibold transition"
+              className="w-full block text-center mt-6 mb-3 bg-[#14AE5C] hover:bg-green-700 text-white py-2 px-10 text-lg font-semibold transition"
             >
               Checkout
             </Link>
+            </div>
           </div>
         </div>
       </div>
