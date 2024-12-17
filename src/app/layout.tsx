@@ -38,6 +38,11 @@ const robotoMedium = localFont({
   variable: "--font-roboto-medium",
   weight: "500",
 });
+const robotoRegular = localFont({
+  src: "./fonts/Roboto/Roboto-Regular.ttf",
+  variable: "--font-roboto-regular",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Great Rift Run",
@@ -77,6 +82,7 @@ export default function RootLayout({
           ${opensansBold.variable} 
           ${robotoMedium.variable} 
           ${robotoCondensedMedium.variable} 
+          ${robotoRegular.variable} 
           antialiased relative z-0`}
       >
         <Navbar className="sticky top-0 z-50" />

@@ -113,62 +113,61 @@ function productDetail() {
           </div>
 
           <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-800">GRR PATRIOT</h2>
-              <p className="text-gray-600 text-sm mt-2">
+            <div className="relative">
+              <div className="absolute top-0 right-0 border-[1px] border-[#14AE5C] py-1 px-[10px] font-[family-name:var(--font-roboto-bold)] text-[#14AE5C] text-lg">IN STOCK</div>
+              <h2 className="text-2xl font-[family-name:var(--font-roboto-bold)] text-[#000000]">GRR PATRIOT</h2>
+              <p className="text-[#303030] mt-[25px] text-lg font-[family-name:var(--font-roboto-regular)]">
                 Designed premium lightweight fine fabric and material. Inspired
                 by the Samburu, colors of blood and wealth.
               </p>
             </div>
 
-            <div className="text-2xl font-bold text-gray-900">KES 1,000</div>
+            <div className="text-2xl mt-[40px] font-[family-name:var(--font-roboto-bold)] text-[#000000]">KES 1,000</div>
 
-            <div>
-              <h4 className="text-gray-700 mb-2">Size</h4>
-              <div className="flex items-center gap-2">
-                <button className="px-4 py-2 border rounded-md hover:bg-green-600 hover:text-white transition">
+            <div className="my-10">
+              <div className="flex items-center gap-0 w-full">
+                <button className="px-4 py-2 border hover:bg-green-600 hover:text-white transition w-[110px]">
                   S
                 </button>
-                <button className="px-4 py-2 border rounded-md hover:bg-green-600 hover:text-white transition">
+                <button className="px-4 py-2 border hover:bg-green-600 hover:text-white transition w-[110px]">
                   L
                 </button>
-                <button className="px-4 py-2 border rounded-md hover:bg-green-600 hover:text-white transition">
+                <button className="px-4 py-2 border hover:bg-green-600 hover:text-white transition w-[110px]">
                   M
                 </button>
-                <button className="px-4 py-2 border rounded-md hover:bg-green-600 hover:text-white transition">
+                <button className="px-4 py-2 border hover:bg-green-600 hover:text-white transition w-[110px]">
                   XL
                 </button>
-                <button className="px-4 py-2 border rounded-md hover:bg-green-600 hover:text-white transition">
+                <button className="px-4 py-2 border hover:bg-green-600 hover:text-white transition w-[110px]">
                   XXL
                 </button>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-gray-700 mb-2">Quantity</h4>
-              <div className="flex items-center gap-2 border rounded-md w-max px-4 py-2">
-                <button className="px-2 text-gray-700 hover:text-black">
+            <div className="my-10">
+              <div className="flex items-center justify-between gap-0 rounded-md w-full">
+                <button className="px-2 py-2 border w-2/6 text-gray-700 hover:text-black">
                   &minus;
                 </button>
-                <span>2</span>
-                <button className="px-2 text-gray-700 hover:text-black">
+                <div className="w-2/6 py-2 border text-center flex items-center justify-center">2</div>
+                <button className="px-2 py-2 border w-2/6 text-gray-700 hover:text-black">
                   +
                 </button>
               </div>
             </div>
 
-            <div className="text-sm text-gray-600 space-y-2">
-              <p>
-                <span className="font-semibold">Color:</span>
-                RED GREEN PATRIOT
-              </p>
-              <p>
-                <span className="font-semibold">Material:</span>
-                100% COTTON
-              </p>
+            <div className="text-sm text-gray-600 my-6">
+              <div className="flex items-center my-2 justify-between font-[family-name:var(--font-roboto-extrabold)] text-[20px]">
+                <span>Color:</span>
+                <span>RED GREEN PATRIOT</span>
+              </div>
+              <div className="flex items-center my-2 justify-between font-[family-name:var(--font-roboto-extrabold)] text-[20px]">
+                <span>Material:</span>
+                <span>100% COTTON</span>
+              </div>
             </div>
 
-            <button className="w-full bg-green-600 text-white py-3 rounded-md text-lg font-semibold hover:bg-green-700 transition">
+            <button className="w-full bg-green-600 text-white py-6 rounded-md text-lg font-semibold hover:bg-green-700 transition">
               Add to Cart
             </button>
           </div>
