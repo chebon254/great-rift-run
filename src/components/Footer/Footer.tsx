@@ -37,7 +37,7 @@ function Footer() {
                   <Link href="#home">Home</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
-                  <Link href="#about">About</Link>
+                  <Link href="/Tracking">Track Order</Link>
                 </li>
                 <li className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-3 uppercase text-[24px] leading-none">
                   <Link href="#programs">Programs</Link>
