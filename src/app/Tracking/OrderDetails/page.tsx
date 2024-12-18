@@ -91,7 +91,7 @@ const OrderDetails = () => {
         <div className="space-y-4 mb-6">
           <div className="flex items-center justify-between border rounded-lg p-4">
             <Image
-              src="/product/product-02.webp"
+              src="/products/product-02.webp"
               alt="Smart Watch"
               width={80}
               height={80}
@@ -104,7 +104,7 @@ const OrderDetails = () => {
           </div>
           <div className="flex items-center justify-between border rounded-lg p-4">
             <Image
-              src="/product/product-02.webp"
+              src="/products/product-02.webp"
               alt="iPhone 15"
               width={80}
               height={80}
