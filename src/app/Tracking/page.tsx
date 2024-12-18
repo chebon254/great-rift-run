@@ -76,10 +76,45 @@ const OrderList = () => {
             </div>
           </div>
         </div>
-        <div className="mx-auto max-w-7xl w-full py-10">
+        <div className="mx-auto max-w-7xl relative z-10 rounded-[10px] bg-white shadow-1 my-4 px-4 py-4 md:px-6 2xl:px-7 flex items-center justify-start  flex-wrap">
+          <ol className="flex items-center whitespace-nowrap">
+            <li className="inline-flex items-center">
+              <Link
+                className="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+                href="/"
+              >
+                Home
+                <svg
+                  className="shrink-0 mx-2 size-4 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </Link>
+            </li>
+            <li
+              className="inline-flex items-center text-sm font-semibold text-gray-800 truncate"
+              aria-current="page"
+            >
+              Orders
+            </li>
+          </ol>
+        </div>
+        <div className="mx-auto max-w-7xl w-full pb-10">
           <div className="p-6 bg-white">
             <h1 className="text-2xl font-bold mb-1">My Orders</h1>
-            <p className="mb-6">Below is a list of orders belonging to <strong>Name:</strong> Kelvin Chebon <strong>Email: </strong>kelvinchebon90@gmail.com</p>
+            <p className="mb-6">
+              Below is a list of orders belonging to <strong>Name:</strong>{" "}
+              Kelvin Chebon <strong>Email: </strong>kelvinchebon90@gmail.com
+            </p>
             <div className="space-y-4">
               {orders.map((order, index) => (
                 <div key={index} className="border-b pb-4">
@@ -100,7 +135,10 @@ const OrderList = () => {
                       >
                         {order.buttonLabel}
                       </button>
-                      <Link href="/Tracking/OrderDetails" className="px-4 py-2 border border-gray-300 rounded">
+                      <Link
+                        href="/Tracking/OrderDetails"
+                        className="px-4 py-2 border border-gray-300 rounded"
+                      >
                         View details
                       </Link>
                     </div>
