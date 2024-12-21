@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import { CartProvider } from "@/context/CartContext";
+import { LocationProvider } from "@/context/LocationContext";
 
 const robotoextrabold = localFont({
   src: "./fonts/Roboto_Condensed/static/RobotoCondensed-ExtraBold.ttf",
@@ -85,10 +87,12 @@ export default function RootLayout({
           ${robotoRegular.variable} 
           antialiased relative z-0`}
       >
-        <Navbar className="sticky top-0 z-50" />
-        <main className="w-full h-fit absolute top-0 z-40">
-          {children}
-        </main>
+        <CartProvider>
+          <LocationProvider>
+            <Navbar className="sticky top-0 z-50" />
+            <main className="w-full h-fit absolute top-0 z-40">{children}</main>
+          </LocationProvider>
+        </CartProvider>
       </body>
     </html>
   );

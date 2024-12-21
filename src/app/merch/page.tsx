@@ -12,153 +12,37 @@ import Link from "next/link";
 import Stories from "@/components/Stories/Stories";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
+import { Product } from "../../../types/product";
 
 function Merch() {
-  const [activeTab, setActiveTab] = React.useState("T-SHIRTS");
+  const [activeTab, setActiveTab] = React.useState("TSHIRTS");
+  const [products, setProducts] = React.useState<Product[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
 
-  const productData = [
-    {
-      category: "T-SHIRTS",
-      products: [
-        {
-          name: "GRR PATRIOT",
-          price: 1000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR PATRIOT2",
-          price: 2000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR PATRIOT3",
-          price: 3000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR PATRIOT4",
-          price: 4000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR PATRIOT5",
-          price: 5000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR PATRIOT6",
-          price: 6000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-      ],
-    },
+  // Fetch products from the API
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products");
+        if (!response.ok) throw new Error("Failed to fetch products");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    {
-      category: "HOODIES",
-      products: [
-        {
-          name: "GRR HOODIE",
-          price: 1000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR HOODIE2",
-          price: 2000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR HOODIE3",
-          price: 3000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR HOODIE4",
-          price: 4000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR HOODIE5",
-          price: 5000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR HOODIE6",
-          price: 6000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-      ],
-    },
-    {
-      category: "CAPS",
-      products: [
-        {
-          name: "GRR CAP",
-          price: 1000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR CAP2",
-          price: 2000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR CAP3",
-          price: 3000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR CAP4",
-          price: 4000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR CAP5",
-          price: 5000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR CAP6",
-          price: 6000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-      ],
-    },
-    {
-      category: "WATER",
-      products: [
-        {
-          name: "GRR WATER",
-          price: 1000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR WATER2",
-          price: 2000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR WATER3",
-          price: 3000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR WATER4",
-          price: 4000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR WATER5",
-          price: 5000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-        {
-          name: "GRR WATER6",
-          price: 6000,
-          image: "/products/shirts/mockup-shirt.png",
-        },
-      ],
-    },
-  ];
+    fetchProducts();
+  }, []);
+
+  // Filter products by category
+  const filteredProducts = React.useMemo(() => {
+    return products.filter(
+      product => product.category === activeTab
+    );
+  }, [products, activeTab]);
 
   return (
     <>
@@ -231,7 +115,7 @@ function Merch() {
             <StaggerContainer staggerChildren={0.3}>
               {/* Tabs */}
               <div className="flex justify-center gap-4 mb-8">
-                {["T-SHIRTS", "HOODIES", "CAPS", "WATER"].map((tab) => (
+                {["TSHIRTS", "HOODIES", "CAPS", "WATER"].map((tab) => (
                   <button
                     key={tab}
                     className={`px-4 py-2 font-[family-name:var(--font-roboto-bold)] tracking-[1px] ${
@@ -246,28 +130,32 @@ function Merch() {
                 ))}
               </div>
 
-              {/* Products */}
+              {/* Products Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                {productData
-                  .find((data) => data.category === activeTab)
-                  ?.products.map((product) => (
+                {isLoading ? (
+                  <div className="col-span-full text-center py-8">Loading products...</div>
+                ) : filteredProducts.length === 0 ? (
+                  <div className="col-span-full text-center py-8">No products found in this category</div>
+                ) : (
+                  filteredProducts.map((product) => (
                     <Link
-                      href={"/merch/product"}
-                      key={product.name}
+                      href={`/merch/product/${product.id}`}
+                      key={product.id}
                       className="bg-white rounded-md text-center"
                     >
                       <Image
-                        src={product.image}
+                        // src={product.imageURL1 || "/products/product_placeholder.png"}
+                        src={"/products/product_placeholder.png"}
                         alt={product.name}
                         width={300}
                         height={300}
                         className="rounded-t-md mx-auto"
                       />
                       <div className="p-4 text-center">
-                        <h3 className=" font-[family-name:var(--font-roboto-bold)] text-lg">
+                        <h3 className="font-[family-name:var(--font-roboto-bold)] text-lg">
                           {product.name}
                         </h3>
-                        <p className=" font-[family-name:var(--font-roboto-bold)] text-gray-600">
+                        <p className="font-[family-name:var(--font-roboto-bold)] text-gray-600">
                           KES {product.price}
                         </p>
                         <button className="bg-[#14AE5C] hidden text-white px-4 py-2 mt-4">
@@ -275,7 +163,8 @@ function Merch() {
                         </button>
                       </div>
                     </Link>
-                  ))}
+                  ))
+                )}
               </div>
             </StaggerContainer>
           </div>
