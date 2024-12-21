@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 import { useCart } from "@/context/CartContext";
