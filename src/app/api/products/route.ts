@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
-import prisma from '../../../../lib/prisma';  // Updated path
+import prisma from '../../../../lib/prisma'; // Updated path
 
 export async function GET() {
+  console.log("Fetching products..."); // Debug log
   try {
     const products = await prisma.product.findMany({
       orderBy: {
@@ -9,6 +10,7 @@ export async function GET() {
       },
     });
     
+    console.log("Products fetched:", products); // Debug log
     return NextResponse.json(products);
   } catch (error) {
     console.error('Error fetching products:', error);
