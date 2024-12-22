@@ -6,9 +6,10 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
+    const id = await params.id;
     const product = await prisma.product.findUnique({
       where: {
-        id: parseInt(params.id)
+        id: parseInt(id)
       }
     });
     
@@ -28,3 +29,4 @@ export async function GET(
     );
   }
 }
+

@@ -144,8 +144,7 @@ function Merch() {
                       className="bg-white rounded-md text-center"
                     >
                       <Image
-                        // src={product.imageURL1 || "/products/product_placeholder.png"}
-                        src={"/products/product_placeholder.png"}
+                        src={product.imageURL1 || "/products/product_placeholder.png"}
                         alt={product.name}
                         width={300}
                         height={300}
