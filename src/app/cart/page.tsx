@@ -108,11 +108,11 @@ function Cart() {
               </div>
               <div className="flex justify-between my-3">
                 <span>Shipping</span>
-                <span className="font-semibold">KES 2,000</span>
+                <span className="font-semibold">KES 0</span>
               </div>
               <div className="border-t pt-2 flex justify-between font-bold text-gray-900 my-3">
                 <span>Total</span>
-                <span>KES {(totalPrice + 2000).toLocaleString()}</span>
+                <span>KES {(totalPrice + 0).toLocaleString()}</span>
               </div>
               <Link
                 href={items.length > 0 ? "/checkout" : "#"}

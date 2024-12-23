@@ -19,7 +19,7 @@ export default function PaymentFailed() {
           Payment Failed
         </h1>
         <p className="font-[family-name:var(--font-roboto-medium)] text-lg mt-4">
-          We couldn't process your payment. Please try again.
+          We couldn&apos;t process your payment. Please try again.
         </p>
         <div className="flex items-center justify-evenly w-fit mx-auto py-10">
           <Link href="/payment" className="bg-[#14AE5C] mx-2 text-[#FFFFFF] py-3 px-10">

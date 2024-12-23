@@ -2,14 +2,12 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 import { useCart } from "@/context/CartContext";
 import { useLocation } from "@/context/LocationContext";
 
 function Payment() {
-  const router = useRouter();
   const { items, totalPrice, clearCart } = useCart();
   const { location, clearLocation } = useLocation();
   const [isLoading, setIsLoading] = React.useState(false);
@@ -35,7 +33,7 @@ function Payment() {
             house: location.house,
             additionalInfo: location.additionalInfo,
           },
-          totalAmount: totalPrice + 2000, // Including shipping
+          totalAmount: totalPrice + 0, // Including shipping
         }),
       });
 
@@ -151,12 +149,12 @@ function Payment() {
             </div>
             <div className="flex justify-between mb-2">
               <p>Shipping</p>
-              <p className="font-[family-name:var(--font-roboto-bold)]">KES 2,000</p>
+              <p className="font-[family-name:var(--font-roboto-bold)]">KES 0</p>
             </div>
             <div className="flex justify-between mb-4">
               <p className="font-[family-name:var(--font-roboto-bold)]">Total</p>
               <p className="font-[family-name:var(--font-roboto-bold)]">
-                KES {(totalPrice + 2000).toLocaleString()}
+                KES {(totalPrice + 0).toLocaleString()}
               </p>
             </div>
 

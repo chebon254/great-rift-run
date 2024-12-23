@@ -216,11 +216,11 @@ function Checkout() {
             </div>
             <div className="flex justify-between mb-2">
               <p>Delivery Fee</p>
-              <p className="font-semibold">KES {totalPrice < 1000 ? 200 : 0}</p>
+              <p className="font-semibold">KES {0}</p>
             </div>
             <div className="flex justify-between mb-6">
               <p>Total</p>
-              <p className="font-semibold">KES {totalPrice + (totalPrice < 1000 ? 200 : 0)}</p>
+              <p className="font-semibold">KES {totalPrice + (0)}</p>
             </div>
             <button
               type="submit"

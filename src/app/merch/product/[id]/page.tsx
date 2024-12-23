@@ -10,6 +10,7 @@ import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 import { useCart } from "@/context/CartContext";
 import { Product } from "../../../../../types/product";
+import CartNotification from "@/components/Notifications/CartNotification";
 
 function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = React.use(params);
@@ -20,6 +21,7 @@ function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const [activeImage, setActiveImage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [selectedCapacity, setSelectedCapacity] = useState("500ML");
+  const [showNotification, setShowNotification] = useState(false);
 
   // Fetch product data
   useEffect(() => {
@@ -63,14 +65,12 @@ function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
     };
 
     addToCart(cartItem);
+    setShowNotification(true);
   };
 
-  const isFormValid = () => {
-    if (product.category === "WATER") {
-      return selectedCapacity !== "";
-    } else {
-      return selectedSize !== "";
-    }
+  // Add handler:
+  const handleNotificationComplete = () => {
+    setShowNotification(false);
   };
 
   const productImages = [
@@ -277,13 +277,18 @@ function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
             </div>
 
             {/* Add to Cart Button */}
-            <button
-              onClick={handleAddToCart}
-              disabled={product.inStock === 0 || !isFormValid()}
-              className="w-full bg-green-600 text-white py-6 text-lg font-semibold hover:bg-green-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
-            >
-              {product.inStock === 0 ? "Out of Stock" : "Add to Cart"}
-            </button>
+            <div className="relative">
+              <button
+                onClick={handleAddToCart}
+                className="w-full bg-green-600 text-white py-6 text-lg font-semibold hover:bg-green-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+              >
+                {product.inStock === 0 ? "Out of Stock" : "Add to Cart"}
+              </button>
+              <CartNotification
+                show={showNotification}
+                onComplete={handleNotificationComplete}
+              />
+            </div>
           </div>
         </div>
       </div>
