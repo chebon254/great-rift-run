@@ -17,7 +17,9 @@ import Socials from "@/components/Footer/Socials";
 export default function Home() {
   return (
     <>
-      <div id="top-nav"></div>
+      <div id="top-nav">
+        
+      </div>
 
       {/* Hero */}
       <div

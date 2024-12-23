@@ -3,12 +3,14 @@
 import * as React from "react";
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 import { useCart } from "@/context/CartContext";
 import { useLocation } from "@/context/LocationContext";
 
 function Checkout() {
+  const router = useRouter();
   const { items, totalPrice } = useCart();
   const { updateLocation } = useLocation();
   const [formData, setFormData] = useState({
@@ -32,17 +34,13 @@ function Checkout() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Save location details to context
-    updateLocation({
-      city: formData.city,
-      street: formData.street,
-      house: formData.house,
-      additionalInfo: formData.additionalInfo
-    });
+    // Save all form data to location context
+    updateLocation(formData);
     // Navigate to payment page
-    window.location.href = "/payment";
+    router.push('/payment');
   };
 
+  
   return (
     <>
       {/* Hero */}
@@ -60,7 +58,7 @@ function Checkout() {
       </div>
 
       {/* Detail */}
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-4xl mx-auto p-6 py-20">
         <h2 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">Your cart</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-8">
           <div className="col-span-2">
@@ -217,25 +215,24 @@ function Checkout() {
               <p className="font-semibold">KES {totalPrice.toLocaleString()}</p>
             </div>
             <div className="flex justify-between mb-2">
-              <p>Shipping</p>
-              <p className="font-semibold">KES 2,000</p>
+              <p>Delivery Fee</p>
+              <p className="font-semibold">KES {totalPrice < 1000 ? 200 : 0}</p>
             </div>
-            <div className="flex justify-between mb-4">
-              <p className="font-semibold">Total</p>
-              <p className="font-semibold">KES {(totalPrice + 2000).toLocaleString()}</p>
+            <div className="flex justify-between mb-6">
+              <p>Total</p>
+              <p className="font-semibold">KES {totalPrice + (totalPrice < 1000 ? 200 : 0)}</p>
             </div>
-
             <button
               type="submit"
-              className="w-full block text-center mt-6 mb-3 bg-[#14AE5C] hover:bg-green-700 text-white py-2 px-10 text-base font-semibold transition"
+              className="px-8 w-full py-3 bg-green-600 hover:bg-green-800 transition-all rounded-md text-white font-semibold"
             >
-              Proceed with Payment
+              Continue to Payment
             </button>
           </div>
         </form>
       </div>
 
-      <Socials />
+        <Socials />
       <Footer />
     </>
   );

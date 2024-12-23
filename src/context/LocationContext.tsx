@@ -9,6 +9,10 @@ interface LocationDetails {
   street: string;
   house: string;
   additionalInfo: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
 }
 
 interface LocationContextType {
@@ -24,7 +28,11 @@ export function LocationProvider({ children }: { children: React.ReactNode }) {
     city: '',
     street: '',
     house: '',
-    additionalInfo: ''
+    additionalInfo: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
   });
 
   const updateLocation = (details: LocationDetails) => {
@@ -36,7 +44,11 @@ export function LocationProvider({ children }: { children: React.ReactNode }) {
       city: '',
       street: '',
       house: '',
-      additionalInfo: ''
+      additionalInfo: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
     });
   };
 
