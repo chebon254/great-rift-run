@@ -18,7 +18,7 @@ function Footer() {
             <div className="flex flex-col items-center md:items-start">
               <div className="font-bold text-lg text-black text-center md:text-left">
                 <Image
-                  src={"/placeholder.png"}
+                  src={"/placeholder.svg"}
                   height={64}
                   width={174}
                   alt="great rift run"

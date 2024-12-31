@@ -39,9 +39,7 @@ function Merch() {
 
   // Filter products by category
   const filteredProducts = React.useMemo(() => {
-    return products.filter(
-      product => product.category === activeTab
-    );
+    return products.filter((product) => product.category === activeTab);
   }, [products, activeTab]);
 
   return (
@@ -114,7 +112,7 @@ function Merch() {
           <div className="mx-auto max-w-7xl px-4 py-20">
             <StaggerContainer staggerChildren={0.3}>
               {/* Tabs */}
-              <div className="flex justify-center gap-4 mb-8">
+              <div className="flex justify-center flex-wrap gap-4 mb-8">
                 {["TSHIRTS", "HOODIES", "CAPS", "WATER"].map((tab) => (
                   <button
                     key={tab}
@@ -133,9 +131,23 @@ function Merch() {
               {/* Products Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
                 {isLoading ? (
-                  <div className="col-span-full text-center py-8">Loading products...</div>
+                  // Skeleton Loader
+                  <>
+                    {Array.from({ length: 6 }).map((_, index) => (
+                      <div
+                        key={index}
+                        className="animate-pulse rounded-md shadow-sm"
+                      >
+                        <div className="bg-gray-300 h-[300px] md:h-[300px] rounded-md mb-4"></div>
+                        <div className="bg-gray-300 h-6 w-3/4 mx-auto rounded mb-2"></div>
+                        <div className="bg-gray-300 h-4 w-1/2 mx-auto rounded"></div>
+                      </div>
+                    ))}
+                  </>
                 ) : filteredProducts.length === 0 ? (
-                  <div className="col-span-full text-center py-8">No products found in this category</div>
+                  <div className="col-span-full text-center py-8">
+                    No products found in this category
+                  </div>
                 ) : (
                   filteredProducts.map((product) => (
                     <Link
@@ -144,7 +156,10 @@ function Merch() {
                       className="bg-white rounded-md text-center"
                     >
                       <Image
-                        src={product.imageURL1 || "/products/product_placeholder.png"}
+                        src={
+                          product.imageURL1 ||
+                          "/products/product_placeholder.png"
+                        }
                         alt={product.name}
                         width={300}
                         height={300}

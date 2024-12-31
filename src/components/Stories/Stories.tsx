@@ -9,8 +9,39 @@ import {
 } from "@/components/ScrollAnimations/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import Skeleton from "./Skeleton";
+
+interface Blog {
+  id: number;
+  title: string;
+  thumbnail: string;
+  createdAt: string;
+}
 
 function Stories() {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Simulate data loading or fetch your cart data
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const response = await fetch("/api/blogs");
+      const data = await response.json();
+      setBlogs(data);
+    };
+
+    fetchBlogs();
+  }, []);
   return (
     <div>
       {/* Stories */}
@@ -25,73 +56,42 @@ function Stories() {
             </motion.h1>
           </StaggerContainer>
           <ScrollReveal variant="fadeIn">
-            <div className="flex items-center justify-evenly flex-wrap my-8">
-              <div className="my-6 mx-4 h-fit w-[380px]">
-                <div className="text-left">
-                  <Image
-                    src={"/story-1.png"}
-                    height={320}
-                    width={400}
-                    alt="great rift run"
-                    className="my-4"
-                  />
-                  <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">
-                    October 10, 2024
-                  </h3>
-                  <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">
-                    THE HEAT OF THE MOMENT
-                  </p>
-                  <Link href={"#"} className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">
-                    READ MORE
-                  </Link>
-                </div>
+            {isLoading ? (
+              <Skeleton />
+            ) : (
+              <div className="flex items-center justify-evenly flex-wrap my-8">
+                {blogs.map((blog) => (
+                  <div key={blog.id} className="my-6 mx-4 h-fit w-[380px]">
+                    <div className="text-left">
+                      <Image
+                        src={blog.thumbnail}
+                        height={320}
+                        width={400}
+                        alt={blog.title}
+                        className="my-4 w-full max-w-[400px]"
+                      />
+                      <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">
+                        {format(new Date(blog.createdAt), "MMMM d, yyyy")}
+                      </h3>
+                      <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">
+                        {blog.title}
+                      </p>
+                      <Link
+                        href={`/blogs/${blog.id}`}
+                        className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]"
+                      >
+                        READ MORE
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="my-6 mx-4 h-fit w-[380px]">
-                <div className="text-left">
-                  <Image
-                    src={"/story-2.png"}
-                    height={320}
-                    width={400}
-                    alt="great rift run"
-                    className="my-4"
-                  />
-                  <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">
-                    October 10, 2024
-                  </h3>
-                  <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">
-                    A CROSS COUNTRY EXPERIENCE
-                  </p>
-                  <Link href={"#"} className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">
-                    READ MORE
-                  </Link>
-                </div>
-              </div>
-              <div className="my-6 mx-4 h-fit w-[380px]">
-                <div className="text-left">
-                  <Image
-                    src={"/story-3.png"}
-                    height={320}
-                    width={400}
-                    alt="great rift run"
-                    className="my-4"
-                  />
-                  <h3 className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-condensed-medium)] text-[32px] leading-none">
-                    October 10, 2024
-                  </h3>
-                  <p className="text-left text-[#1E1E1E] font-[family-name:var(--font-roboto-medium)] my-8 text-[32px] leading-normal">
-                    BUCKET LIST - QUITE A MUDDY ENDING
-                  </p>
-                  <Link href={"#"} className="bg-[#EC221F] text-[#FFFFFF] w-fit py-4 px-6 font-[family-name:var(--font-roboto-extrabold)]">
-                    READ MORE
-                  </Link>
-                </div>
-              </div>
-            </div>
+            )}
           </ScrollReveal>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Stories
+export default Stories;

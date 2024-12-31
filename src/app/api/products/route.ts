@@ -8,6 +8,9 @@ export async function GET() {
       orderBy: {
         createdAt: 'desc',
       },
+      where: {
+        deletedAt: null
+      }
     });
     
     console.log("Products fetched:", products); // Debug log
@@ -18,5 +21,7 @@ export async function GET() {
       { error: 'Error fetching products' },
       { status: 500 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }

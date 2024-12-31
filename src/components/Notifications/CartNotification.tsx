@@ -17,7 +17,7 @@ const CartNotification = ({ show, onComplete }: CartNotificationProps) => {
       setTimeout(() => {
         setNotifications(prev => prev.filter(notifId => notifId !== id));
         onComplete?.();
-      }, 1000);
+      }, 6000);
     }
   }, [show, onComplete]);
 
@@ -26,10 +26,10 @@ const CartNotification = ({ show, onComplete }: CartNotificationProps) => {
       {notifications.map(id => (
         <div
           key={id}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-full 
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-full 
                      animate-[float_1s_ease-out_forwards] pointer-events-none"
         >
-          Added to cart!
+          Added to cart! View cart above
         </div>
       ))}
     </div>

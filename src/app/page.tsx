@@ -13,13 +13,32 @@ import {
 import Stories from "@/components/Stories/Stories";
 import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
+import ContactForm from "@/components/Form/Contact";
+import { useState } from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleModal = () => setIsVisible(!isVisible);
+  
   return (
     <>
-      <div id="top-nav">
-        
-      </div>
+      <div id="top-nav"></div>
+
+      {/* Modal */}
+      {isVisible && (
+        <div className="fixed inset-0 flex items-center justify-center p-4 bg-black/50 z-50">
+          <div className="relative w-full max-w-2xl max-h-[96vh] p-2 overflow-x-hidden overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={toggleModal}
+              className="absolute top-6 z-50 right-0 text-xl flex items-center justify-center bg-red-500 hover:bg-red-400  text-white h-9 w-9 rounded-full p-2"
+            >
+              ✕
+            </button>
+            <ContactForm />
+          </div>
+        </div>
+      )}
 
       {/* Hero */}
       <div
@@ -50,7 +69,7 @@ export default function Home() {
             </StaggerContainer>
 
             <ScrollReveal variant="slideInLeft">
-              <button className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
+              <button onClick={toggleModal} className="bg-[#EC221F] text-[#FFFFFF] w-[240px] sm:w-[240px] md:w-[300px] p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 md:mt-16 font-[family-name:var(--font-roboto-extrabold)] text-sm sm:text-base md:text-lg">
                 JOIN THE GREAT RUN
               </button>
             </ScrollReveal>
@@ -306,6 +325,7 @@ export default function Home() {
                 height={896}
                 width={624}
                 alt="great rift run"
+                className="w-full max-w-[624px]"
               />
             </ScrollReveal>
           </div>

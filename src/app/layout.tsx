@@ -85,7 +85,7 @@ export default function RootLayout({
           ${robotoMedium.variable} 
           ${robotoCondensedMedium.variable} 
           ${robotoRegular.variable} 
-          antialiased relative z-0`}
+          antialiased relative z-0 overflow-x-hidden`}
       >
         <CartProvider>
           <LocationProvider>

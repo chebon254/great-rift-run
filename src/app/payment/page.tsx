@@ -6,20 +6,33 @@ import Footer from "@/components/Footer/Footer";
 import Socials from "@/components/Footer/Socials";
 import { useCart } from "@/context/CartContext";
 import { useLocation } from "@/context/LocationContext";
+import PaymentSkeleton from "./Skeleton";
 
 function Payment() {
   const { items, totalPrice, clearCart } = useCart();
   const { location, clearLocation } = useLocation();
   const [isLoading, setIsLoading] = React.useState(false);
-  const [paymentMethod, setPaymentMethod] = React.useState<'card' | 'mpesa'>('card');
+  const [isAccess, setAccess] = React.useState(true);
+  const [paymentMethod, setPaymentMethod] = React.useState<"card" | "mpesa">(
+    "card"
+  );
+
+  React.useEffect(() => {
+    // Simulate loading or fetch initial data
+    const timer = setTimeout(() => {
+      setAccess(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handlePayment = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('/api/payment/create-order', {
-        method: 'POST',
+      const response = await fetch("/api/payment/create-order", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           cartItems: items,
@@ -36,24 +49,29 @@ function Payment() {
           totalAmount: totalPrice + 0, // Including shipping
         }),
       });
-
+  
       const data = await response.json();
       if (data.success) {
-        // Clear cart and location after successful order creation
-        clearCart();
-        clearLocation();
-        // Redirect to Pesapal payment page
+        // Delay clearing state until navigation occurs
+        setTimeout(() => {
+          clearCart();
+          clearLocation();
+        }, 1000); // Optional: give some delay if needed
+  
+        // Redirect to payment URL
         window.location.href = data.paymentUrl;
       } else {
-        throw new Error('Failed to create order');
+        throw new Error("Failed to create order");
       }
     } catch (error) {
-      console.error('Payment error:', error);
-      alert('Payment failed. Please try again.');
+      console.error("Payment error:", error);
+      alert("Payment failed. Please try again.");
     } finally {
-      setIsLoading(false);
+      // Keep the button in "Processing" state until navigation
+      // Do not reset `isLoading` to `false` here
     }
   };
+  
 
   return (
     <>
@@ -72,102 +90,144 @@ function Payment() {
       </div>
 
       {/* Detail */}
-      <div className="max-w-4xl mx-auto p-6">
-        <h2 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">Payment Details</h2>
-        <div className="grid grid-cols-3 gap-8">
-          <div className="col-span-2">
-            <h3 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">3. Payment Method</h3>
-            
-            {/* Payment Method Selection */}
-            <div className="space-y-4">
-              <div 
-                className={`border rounded-md p-4 cursor-pointer ${
-                  paymentMethod === 'card' ? 'border-green-500' : ''
-                }`}
-                onClick={() => setPaymentMethod('card')}
-              >
-                <div className="flex items-center">
-                  <input 
-                    type="radio" 
-                    checked={paymentMethod === 'card'}
-                    onChange={() => setPaymentMethod('card')}
-                    className="mr-2 h-[24px] w-[24px]" 
-                  />
-                  <div className="flex items-center gap-2">
-                    <Image src="/visa.svg" alt="Visa" width={40} height={40} />
-                    <Image src="/mastercard.svg" alt="Mastercard" width={40} height={40} />
+      {isAccess ? (
+        <PaymentSkeleton />
+      ) : (
+        <div className="max-w-4xl mx-auto p-6">
+          <h2 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">
+            Payment Details
+          </h2>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
+            <div className="md:col-span-2 col-span-1">
+              <h3 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">
+                3. Payment Method
+              </h3>
+
+              {/* Payment Method Selection */}
+              <div className="space-y-4">
+                <div
+                  className={`border rounded-md p-4 cursor-pointer ${
+                    paymentMethod === "card" ? "border-green-500" : ""
+                  }`}
+                  onClick={() => setPaymentMethod("card")}
+                >
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      checked={paymentMethod === "card"}
+                      onChange={() => setPaymentMethod("card")}
+                      className="mr-2 h-[24px] w-[24px]"
+                    />
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/visa.svg"
+                        alt="Visa"
+                        width={40}
+                        height={40}
+                      />
+                      <Image
+                        src="/mastercard.svg"
+                        alt="Mastercard"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <span className="ml-2 font-[family-name:var(--font-roboto-bold)]">
+                      Card Payment
+                    </span>
                   </div>
-                  <span className="ml-2 font-[family-name:var(--font-roboto-bold)]">Card Payment</span>
+                </div>
+
+                <div
+                  className={`border rounded-md p-4 cursor-pointer ${
+                    paymentMethod === "mpesa" ? "border-green-500" : ""
+                  }`}
+                  onClick={() => setPaymentMethod("mpesa")}
+                >
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      checked={paymentMethod === "mpesa"}
+                      onChange={() => setPaymentMethod("mpesa")}
+                      className="mr-2 h-[24px] w-[24px]"
+                    />
+                    <Image
+                      src="/mpesa.png"
+                      alt="M-Pesa"
+                      width={40}
+                      height={40}
+                    />
+                    <span className="ml-2 font-[family-name:var(--font-roboto-bold)]">
+                      M-Pesa
+                    </span>
+                  </div>
                 </div>
               </div>
-
-              <div 
-                className={`border rounded-md p-4 cursor-pointer ${
-                  paymentMethod === 'mpesa' ? 'border-green-500' : ''
-                }`}
-                onClick={() => setPaymentMethod('mpesa')}
-              >
-                <div className="flex items-center">
-                  <input 
-                    type="radio" 
-                    checked={paymentMethod === 'mpesa'}
-                    onChange={() => setPaymentMethod('mpesa')}
-                    className="mr-2 h-[24px] w-[24px]" 
-                  />
-                  <Image src="/mpesa.png" alt="M-Pesa" width={40} height={40} />
-                  <span className="ml-2 font-[family-name:var(--font-roboto-bold)]">M-Pesa</span>
-                </div>
-              </div>
             </div>
-          </div>
 
-          {/* Order Summary */}
-          <div>
-            <h3 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">Order Summary</h3>
-            <div className="mb-20">
-              {items.map((item) => (
-                <div key={`${item.id}-${item.size || item.capacity}`} className="flex items-center mb-4">
-                  <Image
-                    src={item.imageURL1 || "/50x50.png"}
-                    height={48}
-                    width={48}
-                    alt={item.name}
-                    className="w-12 h-12 rounded"
-                  />
-                  <div className="ml-4">
-                    <p className="font-[family-name:var(--font-roboto-bold)]">{item.name}</p>
-                    <p>{item.category === "WATER" ? item.capacity : item.size}</p>
+            {/* Order Summary */}
+            <div className="w-full">
+              <h3 className="text-lg font-[family-name:var(--font-roboto-bold)] mb-4">
+                Order Summary
+              </h3>
+              <div className="mb-20">
+                {items.map((item) => (
+                  <div
+                    key={`${item.id}-${item.size || item.capacity}`}
+                    className="flex items-center mb-4"
+                  >
+                    <Image
+                      src={item.imageURL1 || "/50x50.png"}
+                      height={48}
+                      width={48}
+                      alt={item.name}
+                      className="w-12 h-12 rounded"
+                    />
+                    <div className="ml-4">
+                      <p className="font-[family-name:var(--font-roboto-bold)]">
+                        {item.name}
+                      </p>
+                      <p>
+                        {item.category === "WATER" ? item.capacity : item.size}
+                      </p>
+                    </div>
+                    <p className="ml-auto font-[family-name:var(--font-roboto-bold)]">
+                      {item.quantity}
+                    </p>
                   </div>
-                  <p className="ml-auto font-[family-name:var(--font-roboto-bold)]">{item.quantity}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="flex justify-between mb-2">
-              <p>Subtotal</p>
-              <p className="font-[family-name:var(--font-roboto-bold)]">KES {totalPrice.toLocaleString()}</p>
-            </div>
-            <div className="flex justify-between mb-2">
-              <p>Shipping</p>
-              <p className="font-[family-name:var(--font-roboto-bold)]">KES 0</p>
-            </div>
-            <div className="flex justify-between mb-4">
-              <p className="font-[family-name:var(--font-roboto-bold)]">Total</p>
-              <p className="font-[family-name:var(--font-roboto-bold)]">
-                KES {(totalPrice + 0).toLocaleString()}
-              </p>
-            </div>
+              <div className="flex justify-between mb-2">
+                <p>Subtotal</p>
+                <p className="font-[family-name:var(--font-roboto-bold)]">
+                  KES {totalPrice.toLocaleString()}
+                </p>
+              </div>
+              <div className="flex justify-between mb-4">
+                <p className="font-[family-name:var(--font-roboto-bold)]">
+                  Total
+                </p>
+                <p className="font-[family-name:var(--font-roboto-bold)]">
+                  KES {(totalPrice + 0).toLocaleString()}
+                </p>
+              </div>
 
-            <button
-              onClick={handlePayment}
-              disabled={isLoading}
-              className="w-full block text-center mt-6 mb-3 bg-[#14AE5C] hover:bg-green-700 text-white py-2 px-10 text-base font-semibold transition disabled:bg-gray-400"
-            >
-              {isLoading ? 'Processing...' : 'Pay Now'}
-            </button>
+              <button
+                onClick={handlePayment}
+                disabled={isLoading || totalPrice === 0}
+                className={`w-full block text-center mt-6 mb-3 text-white py-2 px-10 text-base font-semibold transition ${
+                  isLoading || totalPrice === 0
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-[#14AE5C] hover:bg-green-700"
+                }`}
+              >
+                {isLoading ? "Processing..." : "Pay Now"}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <Socials />
       <Footer />

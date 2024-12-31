@@ -1,159 +1,152 @@
+"use client";
+import React, { useState } from "react";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
-import React from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-const OrderList = () => {
-  const orders = [
-    {
-      id: "#FWB127364372",
-      date: "20.12.2023",
-      price: "$4,756",
-      status: "Pre-order",
-      statusColor: "bg-blue-100 text-blue-600",
-      buttonLabel: "Cancel order",
-      buttonColor: "border-red-500 text-red-500",
-    },
-    {
-      id: "#FWB125467980",
-      date: "11.12.2023",
-      price: "$499",
-      status: "In transit",
-      statusColor: "bg-yellow-100 text-yellow-600",
-      buttonLabel: "Cancel order",
-      buttonColor: "border-red-500 text-red-500",
-    },
-    {
-      id: "#FWB139485607",
-      date: "08.12.2023",
-      price: "$85",
-      status: "Confirmed",
-      statusColor: "bg-green-100 text-green-600",
-      buttonLabel: "Order again",
-      buttonColor: "border-blue-600 text-blue-600",
-    },
-    {
-      id: "#FWB137364371",
-      date: "16.11.2023",
-      price: "$119",
-      status: "Confirmed",
-      statusColor: "bg-green-100 text-green-600",
-      buttonLabel: "Order again",
-      buttonColor: "border-blue-600 text-blue-600",
-    },
-    {
-      id: "#FWB134567890",
-      date: "02.11.2023",
-      price: "$2,056",
-      status: "Confirmed",
-      statusColor: "bg-green-100 text-green-600",
-      buttonLabel: "Order again",
-      buttonColor: "border-blue-600 text-blue-600",
-    },
-    {
-      id: "#FWB146284623",
-      date: "26.09.2023",
-      price: "$180",
-      status: "Cancelled",
-      statusColor: "bg-red-100 text-red-600",
-      buttonLabel: "Order again",
-      buttonColor: "border-blue-600 text-blue-600",
-    },
-  ];
+const OrderTracking = () => {
+  const [searchParams, setSearchParams] = useState({
+    email: "",
+    phone: "",
+  });
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const queryParams = new URLSearchParams(
+        Object.entries(searchParams).filter(([value]) => value)
+      );
+      const response = await fetch(`/api/tracking?${queryParams}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setOrders(data);
+        if (data.length === 0) {
+          setError("No orders found with the provided information.");
+        }
+      } else {
+        setError("Failed to fetch orders. Please try again.");
+      }
+    } catch {
+      setError("An error occurred while searching for orders.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
       <div>
-        {/* Hero */}
         <div
           className="h-[30vh] w-full bg-cover bg-center"
           style={{ backgroundImage: "url(/hero-image.png)" }}
         >
           <div className="mx-auto max-w-7xl px-4 h-full flex justify-center items-center">
             <div className="h-fit text-left w-full px-4 md:px-8">
-              <div className="text-left text-[#FFFFFF] my-10 font-[family-name:var(--font-roboto-bold)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              <div className="text-left text-[#FFFFFF] my-10 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                 ORDER TRACKING
               </div>
             </div>
           </div>
         </div>
-        <div className="mx-auto max-w-7xl relative z-10 rounded-[10px] bg-white shadow-1 my-4 px-4 py-4 md:px-6 2xl:px-7 flex items-center justify-start  flex-wrap">
-          <ol className="flex items-center whitespace-nowrap">
-            <li className="inline-flex items-center">
-              <Link
-                className="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600"
-                href="/"
-              >
-                Home
-                <svg
-                  className="shrink-0 mx-2 size-4 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </Link>
-            </li>
-            <li
-              className="inline-flex items-center text-sm font-semibold text-gray-800 truncate"
-              aria-current="page"
-            >
-              Orders
-            </li>
-          </ol>
-        </div>
-        <div className="mx-auto max-w-7xl w-full pb-10">
+
+        <div className="mx-auto max-w-7xl relative z-10 rounded-[10px] bg-white shadow-1 my-4 px-4 py-4 md:px-6 2xl:px-7">
           <div className="p-6 bg-white">
-            <h1 className="text-2xl font-bold mb-1">My Orders</h1>
-            <p className="mb-6">
-              Below is a list of orders belonging to <strong>Name:</strong>{" "}
-              Kelvin Chebon <strong>Email: </strong>kelvinchebon90@gmail.com
-            </p>
-            <div className="space-y-4">
-              {orders.map((order, index) => (
-                <div key={index} className="border-b pb-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="font-semibold">Order ID: {order.id}</p>
-                      <p>Date: {order.date}</p>
-                      <p>Price: {order.price}</p>
-                    </div>
-                    <div className="flex space-x-4 items-center">
-                      <span
-                        className={`px-2 py-1 rounded ${order.statusColor}`}
-                      >
-                        {order.status}
-                      </span>
-                      <button
-                        className={`px-4 py-2 border rounded ${order.buttonColor}`}
-                      >
-                        {order.buttonLabel}
-                      </button>
-                      <Link
-                        href="/Tracking/OrderDetails"
-                        className="px-4 py-2 border border-gray-300 rounded"
-                      >
-                        View details
-                      </Link>
+            <h1 className="text-2xl font-bold mb-1">Track Your Order</h1>
+            <p className="mb-4">Enter email or phone or both used in shipping address.</p>
+            <form onSubmit={handleSearch} className="space-y-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Input
+                  type="email"
+                  placeholder="Enter order email"
+                  value={searchParams.email}
+                  onChange={(e: { target: { value: any } }) =>
+                    setSearchParams((prev) => ({
+                      ...prev,
+                      email: e.target.value,
+                    }))
+                  }
+                  className="border border-gray-300 rounded-[10px] focus:border-green-500 placeholder:text-grey-500"
+                />
+                <Input
+                  type="tel"
+                  placeholder="Enter order phone"
+                  value={searchParams.phone}
+                  onChange={(e: { target: { value: any } }) =>
+                    setSearchParams((prev) => ({
+                      ...prev,
+                      phone: e.target.value,
+                    }))
+                  }
+                  className="border border-gray-300 rounded-[10px] focus:border-green-500 placeholder:text-grey-500"
+                />
+              </div>
+              <Button
+                type="submit"
+                className={`w-full min-w-[120px] rounded-[4px] md:w-auto ${
+                  loading ? "text-gray-400 bg-[#14AE5C]/50" : "text-white bg-[#14AE5C] hover:bg-[#14AE5C]/90"
+                }`}
+                disabled={loading}
+              >
+                {loading ? "Searching..." : "Track Order"}
+              </Button>
+            </form>
+
+            {error && (
+              <div className="text-red-500 mb-4">
+                No order with details found! Check your details
+              </div>
+            )}
+
+            {orders.length > 0 && (
+              <div className="space-y-4">
+                {orders.map((order: any) => (
+                  <div key={order.id} className="border-b pb-4">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-semibold">
+                          Order ID: {order.orderNumber}
+                        </p>
+                        <p>
+                          Date: {new Date(order.createdAt).toLocaleDateString()}
+                        </p>
+                        <p>Total: Ksh{order.totalAmount.toLocaleString()}</p>
+                      </div>
+                      <div className="flex space-x-4 items-center">
+                        <span
+                          className={`px-2 py-1 rounded ${
+                            order.paymentStatus === "PAID"
+                              ? "bg-green-100 text-green-600"
+                              : "bg-yellow-100 text-yellow-600"
+                          }`}
+                        >
+                          {order.paymentStatus}
+                        </span>
+                        <Link
+                          href={`/Tracking/OrderDetails/${order.id}`}
+                          className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50"
+                        >
+                          View details
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-      {/* Footer */}
       <Footer />
     </>
   );
 };
 
-export default OrderList;
+export default OrderTracking;
